@@ -49,6 +49,13 @@ $messages['eo'] = array(
 	'fundraiserlandingpage-desc' => 'Akceptas URL-parametrojn kaj transdonas ilin al la respektiva ŝablono kiel ŝablonajn variablojn',
 );
 
+/** Spanish (Español)
+ * @author Armando-Martin
+ */
+$messages['es'] = array(
+	'fundraiserlandingpage-desc' => 'Tome los parámetros de URL y páselos a la plantilla especificada como variables de plantilla',
+);
+
 /** Estonian (Eesti)
  * @author Pikne
  */
