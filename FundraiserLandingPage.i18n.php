@@ -63,6 +63,13 @@ $messages['et'] = array(
 	'fundraiserlandingpage-desc' => 'Võtab aadressiribalt parameetrid ja annab need mallimuutujatena edasi määratud mallile.',
 );
 
+/** Persian (فارسی)
+ * @author Huji
+ */
+$messages['fa'] = array(
+	'fundraiserlandingpage-desc' => 'پارامترهای نشانی اینترنتی را می‌گیرد و به صورت متغیرهای الگو تحویل الگوی مشخص‌شده می‌دهد.',
+);
+
 /** Finnish (Suomi)
  * @author Olli
  */
