@@ -170,10 +170,11 @@ $messages['nl'] = array(
 );
 
 /** Polish (Polski)
+ * @author Beau
  * @author Olgak85
  */
 $messages['pl'] = array(
-	'fundraiserlandingpage-desc' => 'Pobiera parametry adresu URL i przekazuje je do określonego szablonu jako zmienne szablonów',
+	'fundraiserlandingpage-desc' => 'Pobiera parametry URL i przekazuje je do określonego szablonu jako zmienne szablonów',
 );
 
 /** Piedmontese (Piemontèis)
