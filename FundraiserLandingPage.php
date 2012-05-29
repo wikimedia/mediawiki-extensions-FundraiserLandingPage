@@ -45,9 +45,18 @@ $wgFundraiserLPDefaults = array(
 	'appeal-template' => 'Appeal-template-default',
 	'form-template' => 'Form-template-default',
 	'form-countryspecific' => 'Form-countryspecific-control',
-	'country' => 'XX' // per Charles Barr
+	'country' => 'XX'
 );
 
 // Adding configurrable variable for caching time
 $wgFundraiserLandingPageMaxAge = 300; //5 minutes
 
+// Array of chapter countries and the MediaWiki message that contains
+// the redirect URL.
+$wgFundraiserLandingPageChapters = array(
+	'CH' => "fundraiserlandingpage-wmch-landing-page",
+	'DE' => "fundraiserlandingpage-wmde-landing-page",
+	'FR' => "fundraiserlandingpage-wmfr-landing-page",
+	'GB' => "fundraiserlandingpage-wmuk-landing-page",
+
+);

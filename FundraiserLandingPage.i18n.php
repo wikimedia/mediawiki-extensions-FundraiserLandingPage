@@ -4,6 +4,18 @@ $messages = array();
 
 $messages['en'] = array(
 	'fundraiserlandingpage-desc' => 'Takes URL parameters and passes them to the specified template as template variables',
+	'fundraiserlandingpage-wmch-landing-page' => 'http://www.wikimedia.ch/donate/how-donate',
+	'fundraiserlandingpage-wmde-landing-page' => 'https://spenden.wikimedia.de/spenden/',
+	'fundraiserlandingpage-wmfr-landing-page' => 'https://dons.wikimedia.fr/dons.php',
+	'fundraiserlandingpage-wmuk-landing-page' => 'https://donate.wikimedia.org.uk/',
+);
+
+$messages['qqq'] = array(
+	'fundraiserlandingpage-desc' => '{{desc}}',
+	'fundraiserlandingpage-wmch-landing-page' => 'URL for the default WMCH donation page. DO NOT TRANSLATE',
+	'fundraiserlandingpage-wmde-landing-page' => 'URL for the default WMDE donation page. DO NOT TRANSLATE',
+	'fundraiserlandingpage-wmfr-landing-page' => 'URL for the default WMFR donation page. DO NOT TRANSLATE',
+	'fundraiserlandingpage-wmuk-landing-page' => 'URL for the default WMUK donation page. DO NOT TRANSLATE',
 );
 
 /** Afrikaans (Afrikaans)

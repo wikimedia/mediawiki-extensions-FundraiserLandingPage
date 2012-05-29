@@ -4,6 +4,7 @@
  * directed to the proper form for their country).
  *
  * @author Ryan Kaldari <rkaldari@wikimedia.org>
+ * @author Peter Gehres <pgehres@wikimedia.org>
  */
 class FundraiserRedirector extends UnlistedSpecialPage {
 
@@ -12,7 +13,7 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 	}
 
 	function execute( $par ) {
-		global $wgRequest, $wgOut, $wgFundraiserLPDefaults;
+		global $wgRequest, $wgOut, $wgFundraiserLPDefaults, $wgFundraiserLandingPageChapters;
 		
 		// Set the country parameter
 		$country = $wgRequest->getVal( 'country' );
@@ -40,8 +41,24 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 				$params[$key] = $value;
 			}
 		}
-		
-		// Redirect to FundraiserLandingPage
-		$wgOut->redirect( $this->getTitleFor( 'FundraiserLandingPage' )->getLocalUrl( $params ) );
+
+		// set the default redirect
+		$redirectURL = $this->getTitleFor( 'FundraiserLandingPage' )->getLocalUrl( $params );
+
+		// if the country is covered by a payment-processing chapter, redirect
+		// the donor to the chapter's default landing page
+		if( array_key_exists( $params['country'], $wgFundraiserLandingPageChapters ) ){
+			// Get the message key for the chapter's landing page
+			$message_key = $wgFundraiserLandingPageChapters[ $params['country'] ];
+			// Get the url for the chapter's landing page
+			$message = wfMessage( $message_key )->plain();
+			// if the message is not equal to the default message that is returned
+			// for a missing message, set the redirect URL to the message
+			if( $message != "<$message_key>" ){
+				$redirectURL = $message;
+			}
+		}
+		// Redirect
+		$wgOut->redirect( $redirectURL );
 	}
 }
