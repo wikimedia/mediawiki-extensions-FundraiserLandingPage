@@ -10,12 +10,9 @@ $messages['en'] = array(
 	'fundraiserlandingpage-wmuk-landing-page' => 'https://donate.wikimedia.org.uk/',
 );
 
+/** Message documentation (Message documentation) */
 $messages['qqq'] = array(
 	'fundraiserlandingpage-desc' => '{{desc}}',
-	'fundraiserlandingpage-wmch-landing-page' => 'URL for the default WMCH donation page. DO NOT TRANSLATE',
-	'fundraiserlandingpage-wmde-landing-page' => 'URL for the default WMDE donation page. DO NOT TRANSLATE',
-	'fundraiserlandingpage-wmfr-landing-page' => 'URL for the default WMFR donation page. DO NOT TRANSLATE',
-	'fundraiserlandingpage-wmuk-landing-page' => 'URL for the default WMUK donation page. DO NOT TRANSLATE',
 );
 
 /** Afrikaans (Afrikaans)
@@ -151,6 +148,13 @@ $messages['it'] = array(
  */
 $messages['ja'] = array(
 	'fundraiserlandingpage-desc' => 'URLパラメータを取り、それを指定されたテンプレートにテンプレート変数として渡す',
+);
+
+/** Korean (한국어)
+ * @author 아라
+ */
+$messages['ko'] = array(
+	'fundraiserlandingpage-desc' => 'URL 매개 변수를 사용하여 틀 변수로 지정한 틀에 전달',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
