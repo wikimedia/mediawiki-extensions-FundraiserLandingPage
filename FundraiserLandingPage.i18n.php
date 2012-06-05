@@ -157,6 +157,13 @@ $messages['ko'] = array(
 	'fundraiserlandingpage-desc' => 'URL 매개 변수를 사용하여 틀 변수로 지정한 틀에 전달',
 );
 
+/** Colognian (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'fundraiserlandingpage-desc' => 'Nemmp Parrameetere us däm <i lang="en">URL</i> un scheck se als Parrameetere aan en aanjejovve Schabloon.',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
