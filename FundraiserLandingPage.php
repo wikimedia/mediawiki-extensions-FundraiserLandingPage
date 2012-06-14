@@ -59,4 +59,18 @@ $wgFundraiserLandingPageChapters = array(
 	'FR' => "fundraiserlandingpage-wmfr-landing-page",
 	'GB' => "fundraiserlandingpage-wmuk-landing-page",
 
+	// French Territories per WMFr email 2012-06-13
+	'GP' => "fundraiserlandingpage-wmfr-landing-page", // Guadeloupe
+	'MQ' => "fundraiserlandingpage-wmfr-landing-page", // Martinique
+	'GF' => "fundraiserlandingpage-wmfr-landing-page", // French Guiana
+	'RE' => "fundraiserlandingpage-wmfr-landing-page", // Réunion
+	'YT' => "fundraiserlandingpage-wmfr-landing-page", // Mayotte
+	'PM' => "fundraiserlandingpage-wmfr-landing-page", // Saint Pierre and Miquelon
+	'NC' => "fundraiserlandingpage-wmfr-landing-page", // New Caledonia
+	'PF' => "fundraiserlandingpage-wmfr-landing-page", // French Polynesia
+	'WF' => "fundraiserlandingpage-wmfr-landing-page", // Wallis and Futuna
+	'BL' => "fundraiserlandingpage-wmfr-landing-page", // Saint Barthélemy
+	'MF' => "fundraiserlandingpage-wmfr-landing-page", // Collectivity of San Martin
+	'TF' => "fundraiserlandingpage-wmfr-landing-page", // French Southern and Antarctic Lands
+
 );
