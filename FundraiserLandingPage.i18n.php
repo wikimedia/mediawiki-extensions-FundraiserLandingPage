@@ -22,7 +22,7 @@ $messages['af'] = array(
 	'fundraiserlandingpage-desc' => 'Neem URL-parameters en oordra aan die spesifieke sjabloon as sjabloon veranderlikes',
 );
 
-/** Asturian (Asturianu)
+/** Asturian (asturianu)
  * @author Xuacu
  */
 $messages['ast'] = array(
@@ -58,14 +58,14 @@ $messages['eo'] = array(
 	'fundraiserlandingpage-desc' => 'Akceptas URL-parametrojn kaj transdonas ilin al la respektiva ŝablono kiel ŝablonajn variablojn',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author Armando-Martin
  */
 $messages['es'] = array(
 	'fundraiserlandingpage-desc' => 'Tome los parámetros de URL y páselos a la plantilla especificada como variables de plantilla',
 );
 
-/** Estonian (Eesti)
+/** Estonian (eesti)
  * @author Pikne
  */
 $messages['et'] = array(
@@ -79,14 +79,14 @@ $messages['fa'] = array(
 	'fundraiserlandingpage-desc' => 'پارامترهای نشانی اینترنتی را می‌گیرد و به صورت متغیرهای الگو تحویل الگوی مشخص‌شده می‌دهد.',
 );
 
-/** Finnish (Suomi)
+/** Finnish (suomi)
  * @author Olli
  */
 $messages['fi'] = array(
 	'fundraiserlandingpage-desc' => 'Ottaa osoitemuuttujat ja lähettää ne tietylle mallineelle muuttujina',
 );
 
-/** French (Français)
+/** French (français)
  * @author Gomoko
  */
 $messages['fr'] = array(
@@ -114,7 +114,7 @@ $messages['hsb'] = array(
 	'fundraiserlandingpage-desc' => 'Přepodawa URL-parametry na podatu předłohu jako wariable předłohi',
 );
 
-/** Hungarian (Magyar)
+/** Hungarian (magyar)
  * @author Dj
  * @author Misibacsi
  */
@@ -122,7 +122,7 @@ $messages['hu'] = array(
 	'fundraiserlandingpage-desc' => 'Veszi az URL paramétereket és mint sablon változókat átadja a megadott sablonnak',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author McDutchie
  */
 $messages['ia'] = array(
@@ -136,7 +136,7 @@ $messages['id'] = array(
 	'fundraiserlandingpage-desc' => 'Ambil parameter URL dan melewatkannya ke templat yang telah ditentukan sebagai variabel templat',
 );
 
-/** Italian (Italiano)
+/** Italian (italiano)
  * @author F. Cosoleto
  */
 $messages['it'] = array(
@@ -171,7 +171,7 @@ $messages['lb'] = array(
 	'fundraiserlandingpage-desc' => "Hëllt d'Parameter vun der URL a gëtt se un déi spezifizéiert Schabloun als Schabloune-Variabele weider",
 );
 
-/** Macedonian (Македонски)
+/** Macedonian (македонски)
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
@@ -192,7 +192,7 @@ $messages['nl'] = array(
 	'fundraiserlandingpage-desc' => 'Accepteert URL-parameters en geeft deze door aan het opgegeven sjabloon als sjabloonvariabelen',
 );
 
-/** Polish (Polski)
+/** Polish (polski)
  * @author Beau
  * @author Olgak85
  */
@@ -207,14 +207,14 @@ $messages['pms'] = array(
 	'fundraiserlandingpage-desc' => "A pija ij paràmetr d'anliura e a-j passa a lë stamp spessificà com variàbil dë stamp",
 );
 
-/** Russian (Русский)
+/** Russian (русский)
  * @author Eugrus
  */
 $messages['ru'] = array(
 	'fundraiserlandingpage-desc' => 'Использует параметры URL и передает их в указанный шаблон как переменные шаблона.',
 );
 
-/** Slovenian (Slovenščina)
+/** Slovenian (slovenščina)
  * @author Dbc334
  */
 $messages['sl'] = array(
@@ -228,14 +228,14 @@ $messages['vi'] = array(
 	'fundraiserlandingpage-desc' => 'Đưa các tham số URL vào bản mẫu được chỉ định như các biến bản mẫu',
 );
 
-/** Simplified Chinese (‪中文(简体)‬)
+/** Simplified Chinese (‪中文（简体）‬)
  * @author Yanmiao liu
  */
 $messages['zh-hans'] = array(
 	'fundraiserlandingpage-desc' => '采用URL参数并将其作为模板变量传递给指定的模板',
 );
 
-/** Traditional Chinese (‪中文(繁體)‬)
+/** Traditional Chinese (‪中文（繁體）‬)
  * @author Anakmalaysia
  */
 $messages['zh-hant'] = array(
