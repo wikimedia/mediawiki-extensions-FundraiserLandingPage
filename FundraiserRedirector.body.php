@@ -31,7 +31,14 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 			$country = $wgFundraiserLPDefaults[ 'country' ];
 		}
 		
-		$params = array( 'country' => $country );
+		$params = array(
+			'country' => $country,
+			// set default tracking variables that will be overridden
+			// by anything passed in the query string
+			'utm_medium' => "spontaneous",
+			'utm_source' => "fr-redir",
+			'utm_campaign' => "spontaneous",
+		);
 		
 		// Pass any other params that are set
 		$excludeKeys = array( 'country', 'title' );
