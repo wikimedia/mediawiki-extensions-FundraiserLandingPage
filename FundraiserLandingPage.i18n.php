@@ -29,7 +29,7 @@ $messages['ast'] = array(
 	'fundraiserlandingpage-desc' => 'Toma los parámetros de la URL y los pasa como variables de plantía a la plantía especificada',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Wizardist
  */
@@ -44,7 +44,7 @@ $messages['de'] = array(
 	'fundraiserlandingpage-desc' => 'Ermögliche die Nutzung von URL-Parametern als Vorlagenvariablen',
 );
 
-/** Lower Sorbian (Dolnoserbski)
+/** Lower Sorbian (dolnoserbski)
  * @author Michawiki
  */
 $messages['dsb'] = array(
@@ -93,7 +93,7 @@ $messages['fr'] = array(
 	'fundraiserlandingpage-desc' => "Prends les paramètres de l'URL et les passe au modèle spécifié comme variables de modèle",
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Toliño
  */
 $messages['gl'] = array(
@@ -107,7 +107,7 @@ $messages['he'] = array(
 	'fundraiserlandingpage-desc' => 'קבלת פרמטרים מכתובת והעברתן לתבנית שצוינה בתור משתנה תבנית',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(
