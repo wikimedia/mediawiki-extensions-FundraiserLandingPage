@@ -221,6 +221,13 @@ $messages['sl'] = array(
 	'fundraiserlandingpage-desc' => 'Vzame parametre URL in jih posreduje navedeni predlogi kot spremenljivke predloge',
 );
 
+/** Tagalog (Tagalog)
+ * @author AnakngAraw
+ */
+$messages['tl'] = array(
+	'fundraiserlandingpage-desc' => 'Kumukha ng mga parametro ng URL at ipinapasa ang mga ito sa tinukoy na suleras bilang mga nagbabagu-bagong suleras',
+);
+
 /** Vietnamese (Tiếng Việt)
  * @author Minh Nguyen
  */
