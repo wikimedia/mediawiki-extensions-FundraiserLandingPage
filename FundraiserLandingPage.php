@@ -17,12 +17,12 @@ EOT;
 }
 
 $wgExtensionCredits[ 'specialpage' ][ ] = array(
-	'path' => __FILE__,
-	'name' => 'FundraiserLandingPage',
-	'author' => array( 'Peter Gehres', 'Ryan Kaldari' ),
-	'url' => 'https://www.mediawiki.org/wiki/Extension:FundraiserLandingPage',
+	'path'           => __FILE__,
+	'name'           => 'FundraiserLandingPage',
+	'author'         => array( 'Peter Gehres', 'Ryan Kaldari' ),
+	'url'            => 'https://www.mediawiki.org/wiki/Extension:FundraiserLandingPage',
 	'descriptionmsg' => 'fundraiserlandingpage-desc',
-	'version' => '1.0.0',
+	'version'        => '1.0.0',
 );
 
 $dir = dirname( __FILE__ ) . '/';
@@ -35,17 +35,21 @@ $wgExtensionMessagesFiles[ 'FundraiserLandingPage' ] = $dir . 'FundraiserLanding
 $wgSpecialPages[ 'FundraiserLandingPage' ] = 'FundraiserLandingPage';
 $wgSpecialPages[ 'FundraiserRedirector' ] = 'FundraiserRedirector';
 
+// Specify the function that will initialize the parser function hooks.
+$wgHooks[ 'ParserFirstCallInit' ][ ] = 'fundraiserLandingPageSetupParserFunction';
+$wgExtensionMessagesFiles[ 'FundraiserLandingPageMagic' ] = $dir . 'FundraiserLandingPage.i18n.magic.php';
+
 /*
  * Defaults for the required fields.  These fields will be included whether
  * or not they are passed through the querystring.
  */
 $wgFundraiserLPDefaults = array(
-	'template' => 'Lp-layout-default',
-	'appeal' => 'Appeal-default',
-	'appeal-template' => 'Appeal-template-default',
-	'form-template' => 'Form-template-default',
+	'template'             => 'Lp-layout-default',
+	'appeal'               => 'Appeal-default',
+	'appeal-template'      => 'Appeal-template-default',
+	'form-template'        => 'Form-template-default',
 	'form-countryspecific' => 'Form-countryspecific-control',
-	'country' => 'XX'
+	'country'              => 'XX'
 );
 
 // Adding configurrable variable for caching time
@@ -74,3 +78,125 @@ $wgFundraiserLandingPageChapters = array(
 	'TF' => "fundraiserlandingpage-wmfr-landing-page", // French Southern and Antarctic Lands
 
 );
+
+/**
+ * This function limits the possible characters passed as template keys and
+ * values to letters, numbers, hypens, underscores, and the forward slash.
+ * The function also performs standard escaping of the passed values.
+ *
+ * @param $string  The unsafe string to escape and check for invalid characters
+ * @param $default A default value to return if when making the $string safe no
+ *                 results are returned.
+ *
+ * @return mixed|String A string matching the regex or an empty string
+ */
+function fundraiserLandingPageMakeSafe( $string, $default = '' ) {
+
+	if ( $default != '' ) {
+		$default = fundraiserLandingPageMakeSafe( $default );
+	}
+
+	$num = preg_match( '([a-zA-Z0-9_\-/]+)', $string, $matches );
+
+	if ( $num == 1 ) {
+		# theoretically this is overkill, but better safe than sorry
+		return wfEscapeWikiText( htmlspecialchars( $matches[ 0 ] ) );
+	}
+	return $default;
+}
+
+/**
+ * Register the parser function hooks 'switchlanguage' and 'switchcountry'
+ * with the MW backend.
+ *
+ * @see FundraiserLandingPageSwitchLanguage
+ * @see FundraiserLandingPageSwitchCountry
+ *
+ * @param $parser The WM parser object to hook into.
+ *
+ * @return bool Always true
+ */
+function fundraiserLandingPageSetupParserFunction( &$parser ) {
+
+	$parser->setFunctionHook( 'switchlanguage', 'fundraiserLandingPageSwitchLanguage' );
+	$parser->setFunctionHook( 'switchcountry', 'fundraiserLandingPageSwitchCountry' );
+
+	// Return true so that MediaWiki continues to load extensions.
+	return true;
+}
+
+/**
+ * Attempts to load a language localized template. Precedence is Language,
+ * Country, Root. It is assumed that all parts of the title are separated
+ * with '/'.
+ *
+ * @param        $parser   Reference to the WM parser object
+ * @param string $page     The template page root to load
+ * @param string $language The language to attempt to localize onto
+ * @param string $country  The country to attempt to localize onto
+ *
+ * @return string The wikitext template
+ */
+function fundraiserLandingPageSwitchLanguage( $parser, $page = '', $language = 'en', $country = 'XX' ) {
+
+	$tpltext = '';
+
+	$page = fundraiserLandingPageMakeSafe( $page );
+	$country = fundraiserLandingPageMakeSafe( $country, 'XX' );
+	$language = fundraiserLandingPageMakeSafe( $language, 'en' );
+
+	if ( Title::newFromText( "Template:$page/$language/$country" )->exists() ) {
+
+		$tpltext = "$page/$language/$country";
+
+	} elseif ( Title::newFromText( "Template:$page/$language" )->exists() ) {
+
+		$tpltext = "$page/$language";
+
+	} else {
+		// If all the variants don't exist, then merely return the base. If
+		// something really screwy happened and the base doesn't exist either
+		// we will let the WM error handler sort it out.
+
+		$tpltext = $page;
+	}
+
+	return array( "{{Template:$tpltext}}", 'noparse' => false );
+}
+
+/**
+ * Attempts to load a language localized template. Precedence is Country,
+ * Language, Root. It is assumed that all parts of the title are separated
+ * with '/'.
+ *
+ * @param        $parser   Reference to the WM parser object
+ * @param string $page     The template page root to load
+ * @param string $country  The country to attempt to localize onto
+ * @param string $language The language to attempt to localize onto
+ *
+ * @return string The wikitext template
+ */
+function fundraiserLandingPageSwitchCountry( $parser, $page = '', $country = 'XX', $language = 'en' ) {
+
+	$tpltext = '';
+
+	$page = fundraiserLandingPageMakeSafe( $page );
+	$country = fundraiserLandingPageMakeSafe( $country, 'XX' );
+	$language = fundraiserLandingPageMakeSafe( $language, 'en' );
+
+	if ( Title::newFromText( "Template:$page/$country/$language" )->exists() ) {
+		$tpltext = "$page/$country/$language";
+
+	} elseif ( Title::newFromText( "Template:$page/$country" )->exists() ) {
+		$tpltext = "$page/$country";
+
+	} else {
+		// If all the variants don't exist, then merely return the base. If
+		// something really screwy happened and the base doesn't exist either
+		// we will let the WM error handler sort it out.
+
+		$tpltext = $page;
+	}
+
+	return array( "{{Template:$tpltext}}", 'noparse' => false );
+}
