@@ -13,10 +13,10 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 	}
 
 	function execute( $par ) {
-		global $wgRequest, $wgOut, $wgFundraiserLPDefaults, $wgFundraiserLandingPageChapters;
+		global $wgFundraiserLPDefaults, $wgFundraiserLandingPageChapters;
 		
 		// Set the country parameter
-		$country = $wgRequest->getVal( 'country' );
+		$country = $this->getRequest()->getVal( 'country' );
 		// If no country was passed do a GeoIP lookup
 		if ( !$country ) {
 			if ( function_exists( 'geoip_country_code_by_name' ) ) {
@@ -30,9 +30,25 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 		if ( !$country ) {
 			$country = $wgFundraiserLPDefaults[ 'country' ];
 		}
-		
+
+		// Set the language parameter
+		$language = $this->getRequest()->getVal( 'uselang' );
+		// If not set, try the browser language
+		if( !$language ) {
+			$mwLanguages = array_keys( Language::fetchLanguageNames() );
+			$languages = array_keys( $this->getRequest()->getAcceptLang() );
+			foreach( $languages as $tryLanguage ) {
+				if( in_array( $tryLanguage, $mwLanguages ) ) {
+					// use the language if it is supported in MediaWiki
+					$language = $tryLanguage;
+					break; // don't search further
+				}
+			}
+		}
+
 		$params = array(
 			'country' => $country,
+			'uselang' => $language,
 			// set default tracking variables that will be overridden
 			// by anything passed in the query string
 			'utm_medium' => "spontaneous",
@@ -42,7 +58,7 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 		
 		// Pass any other params that are set
 		$excludeKeys = array( 'country', 'title' );
-		foreach ( $wgRequest->getValues() as $key => $value ) {
+		foreach ( $this->getRequest()->getValues() as $key => $value ) {
 			// Skip the required variables
 			if ( !in_array( $key, $excludeKeys ) ) {
 				$params[$key] = $value;
@@ -66,6 +82,6 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 			}
 		}
 		// Redirect
-		$wgOut->redirect( $redirectURL );
+		$this->getOutput()->redirect( $redirectURL );
 	}
 }
