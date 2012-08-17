@@ -150,6 +150,13 @@ $messages['ja'] = array(
 	'fundraiserlandingpage-desc' => 'URLパラメータを取り、それを指定されたテンプレートにテンプレート変数として渡す',
 );
 
+/** Javanese (Basa Jawa)
+ * @author NoiX180
+ */
+$messages['jv'] = array(
+	'fundraiserlandingpage-desc' => 'Jupuk paramèter URL lan liwataké nèng templat sing dimaksud minangka variablel templat',
+);
+
 /** Korean (한국어)
  * @author 아라
  */
