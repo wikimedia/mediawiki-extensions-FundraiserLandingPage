@@ -185,6 +185,13 @@ $messages['mk'] = array(
 	'fundraiserlandingpage-desc' => 'Зема параметри од URL-адреса и му ги дава на наведениот шаблон како негови променливи',
 );
 
+/** Malayalam (മലയാളം)
+ * @author Praveenp
+ */
+$messages['ml'] = array(
+	'fundraiserlandingpage-desc' => 'യു.ആർ.എൽ. ചരങ്ങൾ എടുത്ത് ബന്ധപ്പെട്ട ഫലകങ്ങളിലേയ്ക്ക് ഫലകത്തിന്റെ ചരങ്ങളായി കടത്തിവിടുന്നു',
+);
+
 /** Malay (Bahasa Melayu)
  * @author Anakmalaysia
  */
