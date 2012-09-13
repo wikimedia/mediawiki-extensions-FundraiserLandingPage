@@ -37,6 +37,13 @@ $messages['be-tarask'] = array(
 	'fundraiserlandingpage-desc' => 'Выкарыстоўвае парамэтры з URL-адрасу і перадае іх у пазначаны шаблён у якасьці зьменных шаблёну',
 );
 
+/** Czech (česky)
+ * @author Mormegil
+ */
+$messages['cs'] = array(
+	'fundraiserlandingpage-desc' => 'Přebírá parametry z URL a předává je uvedené šabloně jako parametry šablony',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  */
