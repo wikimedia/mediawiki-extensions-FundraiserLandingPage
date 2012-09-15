@@ -242,6 +242,13 @@ $messages['sl'] = array(
 	'fundraiserlandingpage-desc' => 'Vzame parametre URL in jih posreduje navedeni predlogi kot spremenljivke predloge',
 );
 
+/** Swedish (svenska)
+ * @author Ainali
+ */
+$messages['sv'] = array(
+	'fundraiserlandingpage-desc' => 'Tar URL-parametrar och skickar dem till den angivna mallen som mallvariabler',
+);
+
 /** Tagalog (Tagalog)
  * @author AnakngAraw
  */
