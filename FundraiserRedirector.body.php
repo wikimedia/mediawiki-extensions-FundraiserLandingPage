@@ -7,7 +7,6 @@
  * @author Peter Gehres <pgehres@wikimedia.org>
  */
 class FundraiserRedirector extends UnlistedSpecialPage {
-
 	function __construct() {
 		parent::__construct( 'FundraiserRedirector' );
 	}
@@ -20,7 +19,7 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 		// If no country was passed do a GeoIP lookup
 		if ( !$country ) {
 			if ( function_exists( 'geoip_country_code_by_name' ) ) {
-				$ip = wfGetIP();
+				$ip = $this->getRequest()->getIP();
 				if ( IP::isValid( $ip ) ) {
 					$country = geoip_country_code_by_name( $ip );
 				}
@@ -74,7 +73,7 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 			// Get the message key for the chapter's landing page
 			$message_key = $wgFundraiserLandingPageChapters[ $params['country'] ];
 			// Get the url for the chapter's landing page
-			$message = wfMessage( $message_key )->plain();
+			$message = $this->msg( $message_key )->plain();
 			// if the message is not equal to the default message that is returned
 			// for a missing message, set the redirect URL to the message
 			if( $message != "<$message_key>" ){

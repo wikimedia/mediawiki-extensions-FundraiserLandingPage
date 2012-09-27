@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Extension:FundraiserLandingPage. This extension takes URL parameters in the
  * QueryString and passes them to the specified template as template variables. 
@@ -7,7 +6,6 @@
  * @author Peter Gehres <pgehres@wikimedia.org>
  */
 
-// Alert the user that this is not a valid entry point to MediaWiki if they try to access the special pages file directly.
 if ( !defined( 'MEDIAWIKI' ) ) {
 	echo <<<EOT
 To install the FundraiserLandingPage extension, put the following line in LocalSettings.php:
@@ -25,7 +23,7 @@ $wgExtensionCredits[ 'specialpage' ][ ] = array(
 	'version'        => '1.0.0',
 );
 
-$dir = dirname( __FILE__ ) . '/';
+$dir = __DIR__ . '/';
 
 $wgAutoloadClasses[ 'FundraiserLandingPage' ] = $dir . 'FundraiserLandingPage.body.php';
 $wgAutoloadClasses[ 'FundraiserRedirector' ] = $dir . 'FundraiserRedirector.body.php';
@@ -84,14 +82,13 @@ $wgFundraiserLandingPageChapters = array(
  * values to letters, numbers, hypens, underscores, and the forward slash.
  * The function also performs standard escaping of the passed values.
  *
- * @param $string  The unsafe string to escape and check for invalid characters
- * @param $default A default value to return if when making the $string safe no
+ * @param $string  string The unsafe string to escape and check for invalid characters
+ * @param $default string A default value to return if when making the $string safe no
  *                 results are returned.
  *
  * @return mixed|String A string matching the regex or an empty string
  */
 function fundraiserLandingPageMakeSafe( $string, $default = '' ) {
-
 	if ( $default != '' ) {
 		$default = fundraiserLandingPageMakeSafe( $default );
 	}
@@ -112,12 +109,11 @@ function fundraiserLandingPageMakeSafe( $string, $default = '' ) {
  * @see FundraiserLandingPageSwitchLanguage
  * @see FundraiserLandingPageSwitchCountry
  *
- * @param $parser The WM parser object to hook into.
+ * @param $parser Parser The WM parser object to hook into.
  *
  * @return bool Always true
  */
 function fundraiserLandingPageSetupParserFunction( &$parser ) {
-
 	$parser->setFunctionHook( 'switchlanguage', 'fundraiserLandingPageSwitchLanguage' );
 	$parser->setFunctionHook( 'switchcountry', 'fundraiserLandingPageSwitchCountry' );
 
@@ -130,7 +126,7 @@ function fundraiserLandingPageSetupParserFunction( &$parser ) {
  * Country, Root. It is assumed that all parts of the title are separated
  * with '/'.
  *
- * @param        $parser   Reference to the WM parser object
+ * @param Parser $parser   Reference to the WM parser object
  * @param string $page     The template page root to load
  * @param string $language The language to attempt to localize onto
  * @param string $country  The country to attempt to localize onto
@@ -138,21 +134,14 @@ function fundraiserLandingPageSetupParserFunction( &$parser ) {
  * @return string The wikitext template
  */
 function fundraiserLandingPageSwitchLanguage( $parser, $page = '', $language = 'en', $country = 'XX' ) {
-
-	$tpltext = '';
-
 	$page = fundraiserLandingPageMakeSafe( $page );
 	$country = fundraiserLandingPageMakeSafe( $country, 'XX' );
 	$language = fundraiserLandingPageMakeSafe( $language, 'en' );
 
 	if ( Title::newFromText( "Template:$page/$language/$country" )->exists() ) {
-
 		$tpltext = "$page/$language/$country";
-
 	} elseif ( Title::newFromText( "Template:$page/$language" )->exists() ) {
-
 		$tpltext = "$page/$language";
-
 	} else {
 		// If all the variants don't exist, then merely return the base. If
 		// something really screwy happened and the base doesn't exist either
@@ -169,7 +158,7 @@ function fundraiserLandingPageSwitchLanguage( $parser, $page = '', $language = '
  * Language, Root. It is assumed that all parts of the title are separated
  * with '/'.
  *
- * @param        $parser   Reference to the WM parser object
+ * @param Parser $parser   Reference to the WM parser object
  * @param string $page     The template page root to load
  * @param string $country  The country to attempt to localize onto
  * @param string $language The language to attempt to localize onto
@@ -177,9 +166,6 @@ function fundraiserLandingPageSwitchLanguage( $parser, $page = '', $language = '
  * @return string The wikitext template
  */
 function fundraiserLandingPageSwitchCountry( $parser, $page = '', $country = 'XX', $language = 'en' ) {
-
-	$tpltext = '';
-
 	$page = fundraiserLandingPageMakeSafe( $page );
 	$country = fundraiserLandingPageMakeSafe( $country, 'XX' );
 	$language = fundraiserLandingPageMakeSafe( $language, 'en' );

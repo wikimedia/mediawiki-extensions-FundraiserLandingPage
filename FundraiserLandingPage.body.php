@@ -12,20 +12,23 @@ class FundraiserLandingPage extends UnlistedSpecialPage
 	}
 
 	function execute( $par ) {
-		global $wgFundraiserLPDefaults, $wgRequest, $wgOut, $wgFundraiserLandingPageMaxAge;
+		global $wgFundraiserLPDefaults, $wgFundraiserLandingPageMaxAge;
+
+		$out = $this->getOutput();
+		$request = $this->getRequest();
 
 		#Set squid age
-		$wgOut->setSquidMaxage( $wgFundraiserLandingPageMaxAge );
+		$out->setSquidMaxage( $wgFundraiserLandingPageMaxAge );
 		$this->setHeaders();
 
 		# set the page title to something useful
-		$wgOut->setPagetitle( wfMsg( 'donate_interface-make-your-donation' ) );
+		$out->setPagetitle( $this->msg( 'donate_interface-make-your-donation' ) );
 
 		# clear output variable to be safe
 		$output = '';
 		
 		# begin generating the template call
-		$template = fundraiserLandingPageMakeSafe( $wgRequest->getText( 'template', $wgFundraiserLPDefaults[ 'template' ] ) );
+		$template = fundraiserLandingPageMakeSafe( $request->getText( 'template', $wgFundraiserLPDefaults[ 'template' ] ) );
 		$output .= "{{ $template\n";
 		
 		# get the required variables (except template and country) to use for the landing page
@@ -37,14 +40,14 @@ class FundraiserLandingPage extends UnlistedSpecialPage
 		);
 		foreach( $requiredParams as $requiredParam ) {
 			$param = fundraiserLandingPageMakeSafe(
-				$wgRequest->getText( $requiredParam, $wgFundraiserLPDefaults[$requiredParam] )
+				$request->getText( $requiredParam, $wgFundraiserLPDefaults[$requiredParam] )
 			);
 			// Add them to the template call
 			$output .= "| $requiredParam = $param\n";
 		}
 
 		# get the country code
-		$country = $wgRequest->getVal( 'country' );
+		$country = $request->getVal( 'country' );
 		# If country still isn't set, set it to the default
 		if ( !$country ) {
 			$country = $wgFundraiserLPDefaults[ 'country' ];
@@ -55,7 +58,7 @@ class FundraiserLandingPage extends UnlistedSpecialPage
 		$excludeKeys = $requiredParams + array( 'template', 'country', 'title' );
 		
 		# add any other parameters passed in the querystring
-		foreach ( $wgRequest->getValues() as $k_unsafe => $v_unsafe ) {
+		foreach ( $request->getValues() as $k_unsafe => $v_unsafe ) {
 			# skip the required variables
 			if ( in_array( $k_unsafe, $excludeKeys ) ) {
 				continue;
@@ -70,7 +73,6 @@ class FundraiserLandingPage extends UnlistedSpecialPage
 		$output .= "}}";
 
 		# print the output to the page
-		$wgOut->addWikiText( $output );
+		$out->addWikiText( $output );
 	}
 }
-
