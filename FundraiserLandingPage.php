@@ -59,7 +59,7 @@ $wgFundraiserLandingPageChapters = array(
 	'CH' => "fundraiserlandingpage-wmch-landing-page",
 	'DE' => "fundraiserlandingpage-wmde-landing-page",
 	'FR' => "fundraiserlandingpage-wmfr-landing-page",
-	'GB' => "fundraiserlandingpage-wmuk-landing-page",
+//	'GB' => "fundraiserlandingpage-wmuk-landing-page", // disabled for 2012 per agreement with WMUK
 
 	// French Territories per WMFr email 2012-06-13
 	'GP' => "fundraiserlandingpage-wmfr-landing-page", // Guadeloupe
