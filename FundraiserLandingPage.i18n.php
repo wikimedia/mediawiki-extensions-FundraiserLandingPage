@@ -29,7 +29,7 @@ $messages['ast'] = array(
 	'fundraiserlandingpage-desc' => 'Toma los parámetros de la URL y los pasa como variables de plantía a la plantía especificada',
 );
 
-/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author EugeneZelenko
  * @author Wizardist
  */
@@ -263,14 +263,14 @@ $messages['vi'] = array(
 	'fundraiserlandingpage-desc' => 'Đưa các tham số URL vào bản mẫu được chỉ định như các biến bản mẫu',
 );
 
-/** Simplified Chinese (‪中文（简体）‬)
+/** Simplified Chinese (中文（简体）‎)
  * @author Yanmiao liu
  */
 $messages['zh-hans'] = array(
 	'fundraiserlandingpage-desc' => '采用URL参数并将其作为模板变量传递给指定的模板',
 );
 
-/** Traditional Chinese (‪中文（繁體）‬)
+/** Traditional Chinese (中文（繁體）‎)
  * @author Anakmalaysia
  */
 $messages['zh-hant'] = array(
