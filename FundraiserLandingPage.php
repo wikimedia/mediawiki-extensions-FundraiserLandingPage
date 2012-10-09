@@ -51,7 +51,7 @@ $wgFundraiserLPDefaults = array(
 );
 
 // Adding configurrable variable for caching time
-$wgFundraiserLandingPageMaxAge = 300; //5 minutes
+$wgFundraiserLandingPageMaxAge = 600; // 10 minutes
 
 // Array of chapter countries and the MediaWiki message that contains
 // the redirect URL.
