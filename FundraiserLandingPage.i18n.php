@@ -157,10 +157,6 @@ $messages['it'] = array(
  */
 $messages['ja'] = array(
 	'fundraiserlandingpage-desc' => 'URL パラメーターを取り、それをテンプレート変数として、指定したテンプレートに渡す',
-	'fundraiserlandingpage-wmch-landing-page' => 'http://www.wikimedia.ch/donate/how-donate',
-	'fundraiserlandingpage-wmde-landing-page' => 'https://spenden.wikimedia.de/spenden/',
-	'fundraiserlandingpage-wmfr-landing-page' => 'https://dons.wikimedia.fr/dons.php',
-	'fundraiserlandingpage-wmuk-landing-page' => 'https://donate.wikimedia.org.uk/',
 );
 
 /** Javanese (Basa Jawa)
