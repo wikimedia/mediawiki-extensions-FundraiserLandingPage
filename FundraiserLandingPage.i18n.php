@@ -10,7 +10,8 @@ $messages['en'] = array(
 	'fundraiserlandingpage-wmuk-landing-page' => 'https://donate.wikimedia.org.uk/',
 );
 
-/** Message documentation (Message documentation) */
+/** Message documentation (Message documentation)
+ */
 $messages['qqq'] = array(
 	'fundraiserlandingpage-desc' => '{{desc}}',
 );
@@ -151,10 +152,15 @@ $messages['it'] = array(
 );
 
 /** Japanese (日本語)
+ * @author Shirayuki
  * @author Whym
  */
 $messages['ja'] = array(
-	'fundraiserlandingpage-desc' => 'URLパラメータを取り、それを指定されたテンプレートにテンプレート変数として渡す',
+	'fundraiserlandingpage-desc' => 'URL パラメーターを取り、それをテンプレート変数として、指定したテンプレートに渡す',
+	'fundraiserlandingpage-wmch-landing-page' => 'http://www.wikimedia.ch/donate/how-donate',
+	'fundraiserlandingpage-wmde-landing-page' => 'https://spenden.wikimedia.de/spenden/',
+	'fundraiserlandingpage-wmfr-landing-page' => 'https://dons.wikimedia.fr/dons.php',
+	'fundraiserlandingpage-wmuk-landing-page' => 'https://donate.wikimedia.org.uk/',
 );
 
 /** Javanese (Basa Jawa)
@@ -276,4 +282,3 @@ $messages['zh-hans'] = array(
 $messages['zh-hant'] = array(
 	'fundraiserlandingpage-desc' => '採用URL參數並將其作為模板變量傳遞給指定的模板',
 );
-
