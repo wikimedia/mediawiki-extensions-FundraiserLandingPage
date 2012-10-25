@@ -78,6 +78,19 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 			// for a missing message, set the redirect URL to the message
 			if( $message != "<$message_key>" ){
 				$redirectURL = $message;
+
+				if( strpos( $redirectURL, "LandingCheck" ) !== false ){
+					// the chapter is using LandingCheck, so go ahead and send
+					// all of the params as well
+					$querystring = http_build_query( $params );
+
+					if( strpos( $redirectURL, "?" ) === false ){
+						$redirectURL .= "?" . $querystring;
+					}
+					else{
+						$redirectURL .= "&" . $querystring;
+					}
+				}
 			}
 		}
 		// Redirect
