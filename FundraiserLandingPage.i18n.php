@@ -253,9 +253,10 @@ $messages['sv'] = array(
 
 /** Tagalog (Tagalog)
  * @author AnakngAraw
+ * @author Sky Harbor
  */
 $messages['tl'] = array(
-	'fundraiserlandingpage-desc' => 'Kumukha ng mga parametro ng URL at ipinapasa ang mga ito sa tinukoy na suleras bilang mga nagbabagu-bagong suleras',
+	'fundraiserlandingpage-desc' => 'Kumukha ng mga parametro ng URL at ipinapasa ang mga ito sa tinukoy na padron bilang mga nagbabagu-bagong padron',
 );
 
 /** Vietnamese (Tiếng Việt)
