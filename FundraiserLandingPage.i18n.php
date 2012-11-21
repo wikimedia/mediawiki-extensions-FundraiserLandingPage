@@ -212,7 +212,7 @@ $messages['ms'] = array(
  * @author Siebrand
  */
 $messages['nl'] = array(
-	'fundraiserlandingpage-desc' => 'Accepteert URL-parameters en geeft deze door aan het opgegeven sjabloon als sjabloonvariabelen',
+	'fundraiserlandingpage-desc' => 'Accepteert URL-parameters en geeft deze door aan de opgegeven sjabloon als sjabloonvariabelen',
 );
 
 /** Polish (polski)
