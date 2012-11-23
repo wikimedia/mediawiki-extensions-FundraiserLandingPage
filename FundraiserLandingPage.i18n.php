@@ -208,6 +208,13 @@ $messages['ms'] = array(
 	'fundraiserlandingpage-desc' => 'Mengambil parameter URL untuk diserahkan kepada templat yang ditentukan dalam bentuk pembolehubah templat',
 );
 
+/** Norwegian Bokmål (norsk (bokmål)‎)
+ * @author Danmichaelo
+ */
+$messages['nb'] = array(
+	'fundraiserlandingpage-desc' => 'Tar URL-parametre og sender de til den angitte malen som malvariabler',
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */
