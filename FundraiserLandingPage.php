@@ -186,3 +186,8 @@ function fundraiserLandingPageSwitchCountry( $parser, $page = '', $country = 'XX
 
 	return array( "{{Template:$tpltext}}", 'noparse' => false );
 }
+
+// These variables are theoretically in ContributionTracking,
+// but setting a default here for safety
+$wgContributionTrackingFundraiserMaintenance = false;
+$wgContributionTrackingFundraiserMaintenanceUnsched = false;

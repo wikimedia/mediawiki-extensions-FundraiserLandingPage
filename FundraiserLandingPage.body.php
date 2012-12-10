@@ -12,7 +12,16 @@ class FundraiserLandingPage extends UnlistedSpecialPage
 	}
 
 	function execute( $par ) {
-		global $wgFundraiserLPDefaults, $wgFundraiserLandingPageMaxAge;
+		global $wgFundraiserLPDefaults, $wgFundraiserLandingPageMaxAge,
+			   $wgContributionTrackingFundraiserMaintenance,
+			   $wgContributionTrackingFundraiserMaintenanceUnsched;
+
+		if( $wgContributionTrackingFundraiserMaintenance
+			|| $wgContributionTrackingFundraiserMaintenanceUnsched ){
+			$this->getOutput()->redirect(
+				Title::newFromText("Special:FundraiserMaintenance")->getFullURL(), "302"
+			);
+		}
 
 		$out = $this->getOutput();
 		$request = $this->getRequest();
