@@ -4,7 +4,7 @@ $messages = array();
 
 $messages['en'] = array(
 	'fundraiserlandingpage-desc' => 'Takes URL parameters and passes them to the specified template as template variables',
-	'fundraiserlandingpage-wmch-landing-page' => 'http://www.wikimedia.ch/donate/how-donate',
+	'fundraiserlandingpage-wmch-landing-page' => 'https://wikimediafoundation.org/wiki/WMFJA1/CH',
 	'fundraiserlandingpage-wmde-landing-page' => 'https://spenden.wikimedia.de/spenden/',
 	'fundraiserlandingpage-wmfr-landing-page' => 'https://dons.wikimedia.fr/dons.php',
 	'fundraiserlandingpage-wmuk-landing-page' => 'https://donate.wikimedia.org.uk/',
