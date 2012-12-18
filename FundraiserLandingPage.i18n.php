@@ -266,6 +266,13 @@ $messages['tl'] = array(
 	'fundraiserlandingpage-desc' => 'Kumukha ng mga parametro ng URL at ipinapasa ang mga ito sa tinukoy na padron bilang mga nagbabagu-bagong padron',
 );
 
+/** Ukrainian (українська)
+ * @author Base
+ */
+$messages['uk'] = array(
+	'fundraiserlandingpage-desc' => 'Використовує параметри URL і передає їх у вказаний шаблон як змінні шаблону',
+);
+
 /** Vietnamese (Tiếng Việt)
  * @author Minh Nguyen
  */
