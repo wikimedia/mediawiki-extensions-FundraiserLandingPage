@@ -244,6 +244,13 @@ $messages['pms'] = array(
 	'fundraiserlandingpage-desc' => "A pija ij paràmetr d'anliura e a-j passa a lë stamp spessificà com variàbil dë stamp",
 );
 
+/** tarandíne (tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'fundraiserlandingpage-desc' => "Pigghie le parametre de l'URL e le passe a 'nu template specifeche cumme variabbele de template",
+);
+
 /** Russian (русский)
  * @author Eugrus
  */
