@@ -11,9 +11,10 @@ $messages['en'] = array(
 );
 
 /** Message documentation (Message documentation)
+ * @author Shirayuki
  */
 $messages['qqq'] = array(
-	'fundraiserlandingpage-desc' => '{{desc}}',
+	'fundraiserlandingpage-desc' => '{{desc|name=Fundraiser Landing Page|url=http://www.mediawiki.org/wiki/Extension:FundraiserLandingPage}}',
 );
 
 /** Afrikaans (Afrikaans)
