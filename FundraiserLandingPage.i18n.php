@@ -188,6 +188,13 @@ $messages['lb'] = array(
 	'fundraiserlandingpage-desc' => "Hëllt d'Parameter vun der URL a gëtt se un déi spezifizéiert Schabloun als Schabloune-Variabele weider",
 );
 
+/** Minangkabau (Baso Minangkabau)
+ * @author Iwan Novirion
+ */
+$messages['min'] = array(
+	'fundraiserlandingpage-desc' => 'Takes URL parameters and passes them to the specified template as template variables',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
