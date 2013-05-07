@@ -58,9 +58,11 @@ $wgFundraiserLandingPageMaxAge = 600; // 10 minutes
 $wgFundraiserLandingPageChapters = array(
 	'CH' => "fundraiserlandingpage-wmch-landing-page",
 	'DE' => "fundraiserlandingpage-wmde-landing-page",
-	'FR' => "fundraiserlandingpage-wmfr-landing-page",
+//	'FR' => "fundraiserlandingpage-wmfr-landing-page", // disabled May 2013 per WMFr request
 //	'GB' => "fundraiserlandingpage-wmuk-landing-page", // disabled for 2012 per agreement with WMUK
 
+/*
+ *	All French Territories disabled May 2013 per WMFr request
 	// French Territories per WMFr email 2012-06-13
 	'GP' => "fundraiserlandingpage-wmfr-landing-page", // Guadeloupe
 	'MQ' => "fundraiserlandingpage-wmfr-landing-page", // Martinique
@@ -74,6 +76,7 @@ $wgFundraiserLandingPageChapters = array(
 	'BL' => "fundraiserlandingpage-wmfr-landing-page", // Saint Barthélemy
 	'MF' => "fundraiserlandingpage-wmfr-landing-page", // Collectivity of San Martin
 	'TF' => "fundraiserlandingpage-wmfr-landing-page", // French Southern and Antarctic Lands
+*/
 
 );
 
