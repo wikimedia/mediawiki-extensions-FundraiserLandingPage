@@ -230,7 +230,7 @@ $messages['mt'] = array(
 	'fundraiserlandingpage-desc' => 'Taċċetta paramtetri mill-URL u tgħaddihom lill-mudell partikulari bħala varjabbli tal-mudell',
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎)
+/** Norwegian Bokmål (norsk bokmål)
  * @author Danmichaelo
  */
 $messages['nb'] = array(
