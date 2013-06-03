@@ -145,6 +145,13 @@ $messages['id'] = array(
 	'fundraiserlandingpage-desc' => 'Ambil parameter URL dan melewatkannya ke templat yang telah ditentukan sebagai variabel templat',
 );
 
+/** Iloko (Ilokano)
+ * @author Lam-ang
+ */
+$messages['ilo'] = array(
+	'fundraiserlandingpage-desc' => 'Mangala kadagiti parametro ti URL ken ipanna kadagiti naisangayan a plantilia a kas dagiti pagdumadumaan ti plantilia',
+);
+
 /** Italian (italiano)
  * @author F. Cosoleto
  */
