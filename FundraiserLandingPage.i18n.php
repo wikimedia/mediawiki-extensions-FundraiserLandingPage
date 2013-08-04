@@ -178,7 +178,7 @@ $messages['jv'] = array(
  * @author 아라
  */
 $messages['ko'] = array(
-	'fundraiserlandingpage-desc' => 'URL 매개 변수를 사용하여 틀 변수로 지정한 틀에 전달',
+	'fundraiserlandingpage-desc' => 'URL 변수를 사용하여 틀 변수로 지정한 틀에 전달',
 );
 
 /** Colognian (Ripoarisch)
