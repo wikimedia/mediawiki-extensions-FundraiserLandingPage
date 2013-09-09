@@ -46,6 +46,13 @@ $messages['cs'] = array(
 	'fundraiserlandingpage-desc' => 'Přebírá parametry z URL a předává je uvedené šabloně jako parametry šablony',
 );
 
+/** Welsh (Cymraeg)
+ * @author Lloffiwr
+ */
+$messages['cy'] = array(
+	'fundraiserlandingpage-desc' => "Yn cymryd paramedrau URL ac yn eu hanfon at y nodyn a benwyd fel newidynnau'r nodyn",
+);
+
 /** German (Deutsch)
  * @author Kghbln
  */
