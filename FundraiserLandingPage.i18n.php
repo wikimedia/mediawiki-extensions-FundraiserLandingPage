@@ -39,7 +39,7 @@ $messages['be-tarask'] = array(
 	'fundraiserlandingpage-desc' => 'Выкарыстоўвае парамэтры з URL-адрасу і перадае іх у пазначаны шаблён у якасьці зьменных шаблёну',
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Mormegil
  */
 $messages['cs'] = array(
