@@ -202,6 +202,13 @@ $messages['lb'] = array(
 	'fundraiserlandingpage-desc' => "Hëllt d'Parameter vun der URL a gëtt se un déi spezifizéiert Schabloun als Schabloune-Variabele weider",
 );
 
+/** Latvian (latviešu)
+ * @author Papuass
+ */
+$messages['lv'] = array(
+	'fundraiserlandingpage-desc' => 'Izmanto URL parametrus un nodod tos norādītajai veidnei kā parametrus',
+);
+
 /** Minangkabau (Baso Minangkabau)
  * @author Iwan Novirion
  */
