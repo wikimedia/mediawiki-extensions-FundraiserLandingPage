@@ -287,6 +287,13 @@ $messages['ru'] = array(
 	'fundraiserlandingpage-desc' => 'Использует параметры URL и передает их в указанный шаблон как переменные шаблона.',
 );
 
+/** Scots (Scots)
+ * @author John Reid
+ */
+$messages['sco'] = array(
+	'fundraiserlandingpage-desc' => 'Taks URL parameters an passes them til the speceefied template as template variables',
+);
+
 /** Slovenian (slovenščina)
  * @author Dbc334
  */
