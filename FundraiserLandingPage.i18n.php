@@ -291,7 +291,7 @@ $messages['ru'] = array(
  * @author John Reid
  */
 $messages['sco'] = array(
-	'fundraiserlandingpage-desc' => 'Taks URL parameters an passes them til the speceefied template as template variables',
+	'fundraiserlandingpage-desc' => 'Taks URL parameters n passes them til the speceefied template aes template variables',
 );
 
 /** Slovenian (slovenščina)
