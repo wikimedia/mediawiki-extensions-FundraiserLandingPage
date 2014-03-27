@@ -1,0 +1,9 @@
+{
+    "@metadata": {
+        "authors": [
+            "EugeneZelenko",
+            "Wizardist"
+        ]
+    },
+    "fundraiserlandingpage-desc": "Выкарыстоўвае парамэтры з URL-адрасу і перадае іх у пазначаны шаблён у якасьці зьменных шаблёну"
+}

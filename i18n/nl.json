@@ -1,0 +1,8 @@
+{
+    "@metadata": {
+        "authors": [
+            "Siebrand"
+        ]
+    },
+    "fundraiserlandingpage-desc": "Accepteert URL-parameters en geeft deze door aan de opgegeven sjabloon als sjabloonvariabelen"
+}

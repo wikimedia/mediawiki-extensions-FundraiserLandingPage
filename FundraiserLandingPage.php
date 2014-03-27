@@ -1,7 +1,7 @@
 <?php
 /*
  * Extension:FundraiserLandingPage. This extension takes URL parameters in the
- * QueryString and passes them to the specified template as template variables. 
+ * QueryString and passes them to the specified template as template variables.
  *
  * @author Peter Gehres <pgehres@wikimedia.org>
  */
@@ -20,7 +20,7 @@ $wgExtensionCredits[ 'specialpage' ][ ] = array(
 	'author'         => array( 'Peter Gehres', 'Ryan Kaldari' ),
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:FundraiserLandingPage',
 	'descriptionmsg' => 'fundraiserlandingpage-desc',
-	'version'        => '1.0.0',
+	'version'        => '1.1.0',
 );
 
 $dir = __DIR__ . '/';
@@ -28,6 +28,7 @@ $dir = __DIR__ . '/';
 $wgAutoloadClasses[ 'FundraiserLandingPage' ] = $dir . 'FundraiserLandingPage.body.php';
 $wgAutoloadClasses[ 'FundraiserRedirector' ] = $dir . 'FundraiserRedirector.body.php';
 
+$wgMessagesDirs['FundraiserLandingPage'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles[ 'FundraiserLandingPage' ] = $dir . 'FundraiserLandingPage.i18n.php';
 
 $wgSpecialPages[ 'FundraiserLandingPage' ] = 'FundraiserLandingPage';

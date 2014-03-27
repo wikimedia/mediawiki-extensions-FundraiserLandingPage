@@ -1,0 +1,8 @@
+{
+    "@metadata": {
+        "authors": [
+            "Eugrus"
+        ]
+    },
+    "fundraiserlandingpage-desc": "Использует параметры URL и передает их в указанный шаблон как переменные шаблона."
+}

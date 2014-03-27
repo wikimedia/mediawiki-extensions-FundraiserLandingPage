@@ -1,0 +1,8 @@
+{
+    "@metadata": {
+        "authors": [
+            "McDutchie"
+        ]
+    },
+    "fundraiserlandingpage-desc": "Prende parametros de URL e los passa al patrono specificate como variabiles de patrono"
+}

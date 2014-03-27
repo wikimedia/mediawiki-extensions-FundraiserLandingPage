@@ -1,0 +1,9 @@
+{
+    "@metadata": {
+        "authors": [
+            "Shirayuki",
+            "Whym"
+        ]
+    },
+    "fundraiserlandingpage-desc": "URL パラメーターを取り、それをテンプレート変数として、指定したテンプレートに渡す"
+}
