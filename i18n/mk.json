@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Bjankuloski06"
-        ]
-    },
-    "fundraiserlandingpage-desc": "Зема параметри од URL-адреса и му ги дава на наведениот шаблон како негови променливи"
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"fundraiserlandingpage-desc": "Зема параметри од URL-адреса и му ги дава на наведениот шаблон како негови променливи"
 }

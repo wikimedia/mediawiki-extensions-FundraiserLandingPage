@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Beau",
-            "Olgak85"
-        ]
-    },
-    "fundraiserlandingpage-desc": "Pobiera parametry URL i przekazuje je do określonego szablonu jako zmienne szablonów"
+	"@metadata": {
+		"authors": [
+			"Beau",
+			"Olgak85"
+		]
+	},
+	"fundraiserlandingpage-desc": "Pobiera parametry URL i przekazuje je do określonego szablonu jako zmienne szablonów"
 }

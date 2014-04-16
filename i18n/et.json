@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Pikne"
-        ]
-    },
-    "fundraiserlandingpage-desc": "Võtab aadressiribalt parameetrid ja annab need mallimuutujatena edasi määratud mallile."
+	"@metadata": {
+		"authors": [
+			"Pikne"
+		]
+	},
+	"fundraiserlandingpage-desc": "Võtab aadressiribalt parameetrid ja annab need mallimuutujatena edasi määratud mallile."
 }

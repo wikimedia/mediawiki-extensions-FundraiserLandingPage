@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Iwan Novirion"
-        ]
-    },
-    "fundraiserlandingpage-desc": "Takes URL parameters and passes them to the specified template as template variables"
+	"@metadata": {
+		"authors": [
+			"Iwan Novirion"
+		]
+	},
+	"fundraiserlandingpage-desc": "Takes URL parameters and passes them to the specified template as template variables"
 }

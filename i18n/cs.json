@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Mormegil"
-        ]
-    },
-    "fundraiserlandingpage-desc": "Přebírá parametry z URL a předává je uvedené šabloně jako parametry šablony"
+	"@metadata": {
+		"authors": [
+			"Mormegil"
+		]
+	},
+	"fundraiserlandingpage-desc": "Přebírá parametry z URL a předává je uvedené šabloně jako parametry šablony"
 }

@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "F. Cosoleto"
-        ]
-    },
-    "fundraiserlandingpage-desc": "Accetta parametri URL e li passa al template specificato come variabili di template"
+	"@metadata": {
+		"authors": [
+			"F. Cosoleto"
+		]
+	},
+	"fundraiserlandingpage-desc": "Accetta parametri URL e li passa al template specificato come variabili di template"
 }

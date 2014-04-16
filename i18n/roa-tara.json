@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Joetaras"
-        ]
-    },
-    "fundraiserlandingpage-desc": "Pigghie le parametre de l'URL e le passe a 'nu template specifeche cumme variabbele de template"
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"fundraiserlandingpage-desc": "Pigghie le parametre de l'URL e le passe a 'nu template specifeche cumme variabbele de template"
 }

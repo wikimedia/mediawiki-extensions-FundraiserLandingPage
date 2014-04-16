@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Anakmalaysia"
-        ]
-    },
-    "fundraiserlandingpage-desc": "採用URL參數並將其作為模板變量傳遞給指定的模板"
+	"@metadata": {
+		"authors": [
+			"Anakmalaysia"
+		]
+	},
+	"fundraiserlandingpage-desc": "採用URL參數並將其作為模板變量傳遞給指定的模板"
 }

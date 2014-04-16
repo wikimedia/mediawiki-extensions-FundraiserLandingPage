@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Yanmiao liu"
-        ]
-    },
-    "fundraiserlandingpage-desc": "采用URL参数并将其作为模板变量传递给指定的模板"
+	"@metadata": {
+		"authors": [
+			"Yanmiao liu"
+		]
+	},
+	"fundraiserlandingpage-desc": "采用URL参数并将其作为模板变量传递给指定的模板"
 }

@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Dj",
-            "Misibacsi"
-        ]
-    },
-    "fundraiserlandingpage-desc": "Veszi az URL paramétereket és mint sablon változókat átadja a megadott sablonnak"
+	"@metadata": {
+		"authors": [
+			"Dj",
+			"Misibacsi"
+		]
+	},
+	"fundraiserlandingpage-desc": "Veszi az URL paramétereket és mint sablon változókat átadja a megadott sablonnak"
 }

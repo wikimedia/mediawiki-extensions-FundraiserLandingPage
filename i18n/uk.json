@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Base"
-        ]
-    },
-    "fundraiserlandingpage-desc": "Використовує параметри URL і передає їх у вказаний шаблон як змінні шаблону"
+	"@metadata": {
+		"authors": [
+			"Base"
+		]
+	},
+	"fundraiserlandingpage-desc": "Використовує параметри URL і передає їх у вказаний шаблон як змінні шаблону"
 }

@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Anakmalaysia"
-        ]
-    },
-    "fundraiserlandingpage-desc": "Mengambil parameter URL untuk diserahkan kepada templat yang ditentukan dalam bentuk pembolehubah templat"
+	"@metadata": {
+		"authors": [
+			"Anakmalaysia"
+		]
+	},
+	"fundraiserlandingpage-desc": "Mengambil parameter URL untuk diserahkan kepada templat yang ditentukan dalam bentuk pembolehubah templat"
 }
