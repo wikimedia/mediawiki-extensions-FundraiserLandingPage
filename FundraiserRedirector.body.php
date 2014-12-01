@@ -14,19 +14,22 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 	function execute( $par ) {
 		global $wgFundraiserLPDefaults, $wgFundraiserLandingPageChapters;
 
-		// Check whether GeoIP cookie is already present.
-		$country = false;
-		$geoip = $this->getRequest()->getCookie( 'GeoIP', '' );
-		if ( $geoip ) {
-			$components = explode( ':', $geoip );
-			$country = $components[0];
-		} else {
-			// If no country was passed, do a GeoIP lookup.
-			if ( function_exists( 'geoip_country_code_by_name' ) ) {
-				$ip = $this->getRequest()->getIP();
-				if ( IP::isValid( $ip ) ) {
-					$country = geoip_country_code_by_name( $ip );
-				}
+		// Country passed in the URL param gets first precedence.
+		$country = $this->getRequest()->getVal( 'country' );
+
+		// Get country from the GeoIP cookie if present.
+		if ( !$country ) {
+			$geoip = $this->getRequest()->getCookie( 'GeoIP', '' );
+			if ( $geoip ) {
+				$components = explode( ':', $geoip );
+				$country = $components[0];
+			}
+		}
+		// If no country is available yet, do a GeoIP lookup.
+		if ( !$country && function_exists( 'geoip_country_code_by_name' ) ) {
+			$ip = $this->getRequest()->getIP();
+			if ( IP::isValid( $ip ) ) {
+				$country = geoip_country_code_by_name( $ip );
 			}
 		}
 		// If country still isn't set, set it to the default
