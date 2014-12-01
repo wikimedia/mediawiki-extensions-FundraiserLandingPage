@@ -13,11 +13,15 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 
 	function execute( $par ) {
 		global $wgFundraiserLPDefaults, $wgFundraiserLandingPageChapters;
-		
-		// Set the country parameter
-		$country = $this->getRequest()->getVal( 'country' );
-		// If no country was passed do a GeoIP lookup
-		if ( !$country ) {
+
+		// Check whether GeoIP cookie is already present.
+		$country = false;
+		$geoip = $this->getRequest()->getCookie( 'GeoIP', '' );
+		if ( $geoip ) {
+			$components = explode( ':', $geoip );
+			$country = $components[0];
+		} else {
+			// If no country was passed, do a GeoIP lookup.
 			if ( function_exists( 'geoip_country_code_by_name' ) ) {
 				$ip = $this->getRequest()->getIP();
 				if ( IP::isValid( $ip ) ) {
