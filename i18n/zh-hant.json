@@ -2,8 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Anakmalaysia",
-			"Cwlin0416"
+			"Cwlin0416",
+			"LNDDYL"
 		]
 	},
-	"fundraiserlandingpage-desc": "採用 URL 參數並將其作為樣板變數傳遞給指定的樣板"
+	"fundraiserlandingpage-desc": "採用 URL 參數並將其作為模板變數傳遞給指定的模板"
 }
