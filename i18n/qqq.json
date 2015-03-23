@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Shirayuki"
+			"Shirayuki",
+			"Umherirrender"
 		]
 	},
-	"fundraiserlandingpage-desc": "{{desc|name=Fundraiser Landing Page|url=http://www.mediawiki.org/wiki/Extension:FundraiserLandingPage}}"
+	"fundraiserlandingpage-desc": "{{desc|name=Fundraiser Landing Page|url=https://www.mediawiki.org/wiki/Extension:FundraiserLandingPage}}"
 }
