@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Araceletorres"
+		]
+	},
+	"fundraiserlandingpage-desc": "Tome os parâmetros da URL e passe-os para o modelo especificado como variáveis de modelo."
+}
