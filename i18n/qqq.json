@@ -5,5 +5,9 @@
 			"Umherirrender"
 		]
 	},
-	"fundraiserlandingpage-desc": "{{desc|name=Fundraiser Landing Page|url=https://www.mediawiki.org/wiki/Extension:FundraiserLandingPage}}"
+	"fundraiserlandingpage-desc": "{{desc|name=Fundraiser Landing Page|url=https://www.mediawiki.org/wiki/Extension:FundraiserLandingPage}}",
+	"fundraiserlandingpage-wmch-landing-page": "{{notranslate}}Link to Wikimedia Switzerland's fundraiser landing page.",
+	"fundraiserlandingpage-wmde-landing-page": "{{notranslate}}Link to Wikimedia Germany's fundraiser landing page.",
+	"fundraiserlandingpage-wmfr-landing-page": "{{notranslate}}Link to Wikimedia France's fundraiser landing page.",
+	"fundraiserlandingpage-wmuk-landing-page": "{{notranslate}}Link to Wikimedia UK's fundraiser landing page."
 }
