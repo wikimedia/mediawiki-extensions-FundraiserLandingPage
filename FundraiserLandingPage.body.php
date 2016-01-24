@@ -5,8 +5,7 @@
  *
  * @author Peter Gehres <pgehres@wikimedia.org>
  */
-class FundraiserLandingPage extends UnlistedSpecialPage
-{
+class FundraiserLandingPage extends UnlistedSpecialPage  {
 	function __construct() {
 		parent::__construct( 'FundraiserLandingPage' );
 	}
@@ -37,9 +36,11 @@ class FundraiserLandingPage extends UnlistedSpecialPage
 		$output = '';
 		
 		# begin generating the template call
-		$template = fundraiserLandingPageMakeSafe( $request->getText( 'template', $wgFundraiserLPDefaults[ 'template' ] ) );
+		$template = self::fundraiserLandingPageMakeSafe(
+			$request->getText( 'template', $wgFundraiserLPDefaults[ 'template' ] )
+		);
 		$output .= "{{ $template\n";
-		
+
 		# get the required variables (except template and country) to use for the landing page
 		$requiredParams = array(
 			'appeal',
@@ -48,7 +49,7 @@ class FundraiserLandingPage extends UnlistedSpecialPage
 			'form-countryspecific'
 		);
 		foreach( $requiredParams as $requiredParam ) {
-			$param = fundraiserLandingPageMakeSafe(
+			$param = self::fundraiserLandingPageMakeSafe(
 				$request->getText( $requiredParam, $wgFundraiserLPDefaults[$requiredParam] )
 			);
 			// Add them to the template call
@@ -61,11 +62,11 @@ class FundraiserLandingPage extends UnlistedSpecialPage
 		if ( !$country ) {
 			$country = $wgFundraiserLPDefaults[ 'country' ];
 		}
-		$country = fundraiserLandingPageMakeSafe( $country );
+		$country = self::fundraiserLandingPageMakeSafe( $country );
 		$output .= "| country = $country\n";
 
 		$excludeKeys = $requiredParams + array( 'template', 'country', 'title' );
-		
+
 		# add any other parameters passed in the querystring
 		foreach ( $request->getValues() as $k_unsafe => $v_unsafe ) {
 			# skip the required variables
@@ -73,8 +74,8 @@ class FundraiserLandingPage extends UnlistedSpecialPage
 				continue;
 			}
 			# get the variable's name and value
-			$key = fundraiserLandingPageMakeSafe( $k_unsafe );
-			$val = fundraiserLandingPageMakeSafe( $v_unsafe );
+			$key = self::fundraiserLandingPageMakeSafe( $k_unsafe );
+			$val = self::fundraiserLandingPageMakeSafe( $v_unsafe );
 			# print to the template in wiki-syntax
 			$output .= "| $key = $val\n";
 		}
@@ -83,5 +84,96 @@ class FundraiserLandingPage extends UnlistedSpecialPage
 
 		# print the output to the page
 		$out->addWikiText( $output );
+	}
+
+	/**
+	 * This function limits the possible characters passed as template keys and
+	 * values to letters, numbers, hypens, underscores, and the forward slash.
+	 * The function also performs standard escaping of the passed values.
+	 *
+	 * @param $string  string The unsafe string to escape and check for invalid characters
+	 * @param $default string A default value to return if when making the $string safe no
+	 *                 results are returned.
+	 *
+	 * @return mixed|String A string matching the regex or an empty string
+	 */
+	private static function fundraiserLandingPageMakeSafe( $string, $default = '' ) {
+		if ( $default != '' ) {
+			$default = self::fundraiserLandingPageMakeSafe( $default );
+		}
+
+		$num = preg_match( '([a-zA-Z0-9_\-/]+)', $string, $matches );
+
+		if ( $num == 1 ) {
+			# theoretically this is overkill, but better safe than sorry
+			return wfEscapeWikiText( htmlspecialchars( $matches[ 0 ] ) );
+		}
+		return $default;
+	}
+
+	/**
+	 * Attempts to load a language localized template. Precedence is Language,
+	 * Country, Root. It is assumed that all parts of the title are separated
+	 * with '/'.
+	 *
+	 * @param Parser $parser   Reference to the WM parser object
+	 * @param string $page     The template page root to load
+	 * @param string $language The language to attempt to localize onto
+	 * @param string $country  The country to attempt to localize onto
+	 *
+	 * @return string The wikitext template
+	 */
+	public static function fundraiserLandingPageSwitchLanguage( $parser, $page = '', $language = 'en', $country = 'XX' ) {
+		$page = self::fundraiserLandingPageMakeSafe( $page );
+		$country = self::fundraiserLandingPageMakeSafe( $country, 'XX' );
+		$language = self::fundraiserLandingPageMakeSafe( $language, 'en' );
+
+		if ( Title::newFromText( "Template:$page/$language/$country" )->exists() ) {
+			$tpltext = "$page/$language/$country";
+		} elseif ( Title::newFromText( "Template:$page/$language" )->exists() ) {
+			$tpltext = "$page/$language";
+		} else {
+			// If all the variants don't exist, then merely return the base. If
+			// something really screwy happened and the base doesn't exist either
+			// we will let the WM error handler sort it out.
+
+			$tpltext = $page;
+		}
+
+		return array( "{{Template:$tpltext}}", 'noparse' => false );
+	}
+
+	/**
+	 * Attempts to load a language localized template. Precedence is Country,
+	 * Language, Root. It is assumed that all parts of the title are separated
+	 * with '/'.
+	 *
+	 * @param Parser $parser   Reference to the WM parser object
+	 * @param string $page     The template page root to load
+	 * @param string $country  The country to attempt to localize onto
+	 * @param string $language The language to attempt to localize onto
+	 *
+	 * @return string The wikitext template
+	 */
+	public static function fundraiserLandingPageSwitchCountry( $parser, $page = '', $country = 'XX', $language = 'en' ) {
+		$page = self::fundraiserLandingPageMakeSafe( $page );
+		$country = self::fundraiserLandingPageMakeSafe( $country, 'XX' );
+		$language = self::fundraiserLandingPageMakeSafe( $language, 'en' );
+
+		if ( Title::newFromText( "Template:$page/$country/$language" )->exists() ) {
+			$tpltext = "$page/$country/$language";
+
+		} elseif ( Title::newFromText( "Template:$page/$country" )->exists() ) {
+			$tpltext = "$page/$country";
+
+		} else {
+			// If all the variants don't exist, then merely return the base. If
+			// something really screwy happened and the base doesn't exist either
+			// we will let the WM error handler sort it out.
+
+			$tpltext = $page;
+		}
+
+		return array( "{{Template:$tpltext}}", 'noparse' => false );
 	}
 }

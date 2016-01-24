@@ -93,8 +93,7 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 
 					if( strpos( $redirectURL, "?" ) === false ){
 						$redirectURL .= "?" . $querystring;
-					}
-					else{
+					} else{
 						$redirectURL .= "&" . $querystring;
 					}
 				}

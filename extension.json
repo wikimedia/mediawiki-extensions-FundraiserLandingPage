@@ -1,0 +1,52 @@
+{
+	"name": "FundraiserLandingPage",
+	"author": [
+		"Peter Gehres",
+		"Ryan Kaldari"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:FundraiserLandingPage",
+	"descriptionmsg": "fundraiserlandingpage-desc",
+	"version": "1.1.0",
+	"type": "specialpage",
+	"AutoloadClasses": {
+		"FundraiserLandingPage": "FundraiserLandingPage.body.php",
+		"FundraiserRedirector": "FundraiserRedirector.body.php",
+		"FundraiserLandingPageHooks": "FundraiserLandingPage.hooks.php"
+	},
+	"MessagesDirs": {
+		"FundraiserLandingPage": [
+			"i18n"
+		]
+	},
+	"Hooks": {
+		"ParserFirstCallInit": "FundraiserLandingPageHooks::onParserFirstCallInit"
+	},
+	"ExtensionMessagesFiles": {
+		"FundraiserLandingPageAlias": "FundraiserLandingPage.alias.php",
+		"FundraiserLandingPageMagic": "FundraiserLandingPage.i18n.magic.php"
+	},
+	"SpecialPages": {
+		"FundraiserLandingPage": "FundraiserLandingPage",
+		"FundraiserRedirector": "FundraiserRedirector"
+	},
+	"config": {
+		"FundraiserLPDefaults": {
+			"template": "Lp-layout-default",
+			"appeal": "Appeal-default",
+			"appeal-template": "Appeal-template-default",
+			"form-template": "Form-template-default",
+			"form-countryspecific": "Form-countryspecific-control",
+			"country": "XX",
+			"_merge_strategy": "array_plus"
+		},
+		"FundraiserLandingPageChapters": {
+			"CH": "fundraiserlandingpage-wmch-landing-page",
+			"DE": "fundraiserlandingpage-wmde-landing-page",
+			"_merge_strategy": "array_plus"
+		},
+		"FundraiserLandingPageMaxAge": 600,
+		"ContributionTrackingFundraiserMaintenance": false,
+		"ContributionTrackingFundraiserMaintenanceUnsched": false
+	},
+	"manifest_version": 1
+}
