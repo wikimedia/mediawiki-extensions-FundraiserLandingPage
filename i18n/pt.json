@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hamilton Abreu"
+		]
+	},
+	"fundraiserlandingpage-desc": "Recebe parâmetros URL e passa-os para a predefinição especificada como variáveis de predefinições"
+}
