@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Cedric31"
+		]
+	},
+	"fundraiserlandingpage-desc": "Pren los paramètres de l'URL e los passa al modèl especificat coma variablas de modèl"
+}
