@@ -30,7 +30,7 @@ class FundraiserLandingPage extends UnlistedSpecialPage  {
 		$this->setHeaders();
 
 		# set the page title to something useful
-		$out->setPagetitle( $this->msg( 'donate_interface-make-your-donation' ) );
+		$out->setPageTitle( $this->msg( 'donate_interface-make-your-donation' ) );
 
 		# clear output variable to be safe
 		$output = '';
