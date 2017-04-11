@@ -102,11 +102,11 @@ class FundraiserLandingPage extends UnlistedSpecialPage  {
 			$default = self::fundraiserLandingPageMakeSafe( $default );
 		}
 
-		$num = preg_match( '([a-zA-Z0-9_\-/]+)', $string, $matches );
+		$num = preg_match( '/^([-a-zA-Z0-9_\/]+)$/', $string, $matches );
 
 		if ( $num == 1 ) {
 			# theoretically this is overkill, but better safe than sorry
-			return wfEscapeWikiText( htmlspecialchars( $matches[ 0 ] ) );
+			return wfEscapeWikiText( htmlspecialchars( $matches[1] ) );
 		}
 		return $default;
 	}
