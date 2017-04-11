@@ -82,6 +82,11 @@ class FundraiserLandingPage extends UnlistedSpecialPage  {
 		# close the template call
 		$output .= "}}";
 
+		# Hijack parser internals to workaround T156184.  This should be safe
+		# since we've sanitized all params.
+		$parserOptions = $out->parserOptions();
+		$parserOptions->setAllowUnsafeRawHtml( true );
+
 		# print the output to the page
 		$out->addWikiText( $output );
 	}
