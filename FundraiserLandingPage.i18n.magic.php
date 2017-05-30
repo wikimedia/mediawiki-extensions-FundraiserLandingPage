@@ -1,8 +1,8 @@
 <?php
 
-$magicWords = array();
+$magicWords = [];
 
-$magicWords['en'] = array(
-	'switchlanguage' => array( 0, 'switchlanguage' ),
-	'switchcountry'  => array( 0, 'switchcountry' ),
-);
+$magicWords['en'] = [
+	'switchlanguage' => [ 0, 'switchlanguage' ],
+	'switchcountry' => [ 0, 'switchcountry' ],
+];

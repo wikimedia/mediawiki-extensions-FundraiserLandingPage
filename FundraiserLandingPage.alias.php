@@ -1,9 +1,9 @@
 <?php
 
-$specialPageAliases = array();
+$specialPageAliases = [];
 
 /** English */
-$specialPageAliases[ 'en' ] = array(
-	'FundraiserLandingPage' => array( 'FundraiserLandingPage', 'FLP' ),
-	'FundraiserRedirector' => array( 'FundraiserRedirector', 'FR' ),
-);
+$specialPageAliases[ 'en' ] = [
+	'FundraiserLandingPage' => [ 'FundraiserLandingPage', 'FLP' ],
+	'FundraiserRedirector' => [ 'FundraiserRedirector', 'FR' ],
+];

@@ -40,11 +40,11 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 		// Set the language parameter
 		$language = $this->getRequest()->getVal( 'uselang' );
 		// If not set, try the browser language
-		if( !$language ) {
+		if ( !$language ) {
 			$mwLanguages = array_keys( Language::fetchLanguageNames() );
 			$languages = array_keys( $this->getRequest()->getAcceptLang() );
-			foreach( $languages as $tryLanguage ) {
-				if( in_array( $tryLanguage, $mwLanguages ) ) {
+			foreach ( $languages as $tryLanguage ) {
+				if ( in_array( $tryLanguage, $mwLanguages ) ) {
 					// use the language if it is supported in MediaWiki
 					$language = $tryLanguage;
 					break; // don't search further
@@ -52,7 +52,7 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 			}
 		}
 
-		$params = array(
+		$params = [
 			'country' => $country,
 			'uselang' => $language,
 			// set default tracking variables that will be overridden
@@ -60,10 +60,10 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 			'utm_medium' => "spontaneous",
 			'utm_source' => "fr-redir",
 			'utm_campaign' => "spontaneous",
-		);
-		
+		];
+
 		// Pass any other params that are set
-		$excludeKeys = array( 'country', 'title' );
+		$excludeKeys = [ 'country', 'title' ];
 		foreach ( $this->getRequest()->getValues() as $key => $value ) {
 			// Skip the required variables
 			if ( !in_array( $key, $excludeKeys ) ) {
@@ -76,24 +76,24 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 
 		// if the country is covered by a payment-processing chapter, redirect
 		// the donor to the chapter's default landing page
-		if( array_key_exists( $params['country'], $wgFundraiserLandingPageChapters ) ){
+		if ( array_key_exists( $params['country'], $wgFundraiserLandingPageChapters ) ){
 			// Get the message key for the chapter's landing page
 			$message_key = $wgFundraiserLandingPageChapters[ $params['country'] ];
 			// Get the url for the chapter's landing page
 			$message = $this->msg( $message_key )->plain();
 			// if the message is not equal to the default message that is returned
 			// for a missing message, set the redirect URL to the message
-			if( $message != "<$message_key>" ){
+			if ( $message != "<$message_key>" ){
 				$redirectURL = $message;
 
-				if( strpos( $redirectURL, "LandingCheck" ) !== false ){
+				if ( strpos( $redirectURL, "LandingCheck" ) !== false ){
 					// the chapter is using LandingCheck, so go ahead and send
 					// all of the params as well
 					$querystring = http_build_query( $params );
 
-					if( strpos( $redirectURL, "?" ) === false ){
+					if ( strpos( $redirectURL, "?" ) === false ){
 						$redirectURL .= "?" . $querystring;
-					} else{
+					} else {
 						$redirectURL .= "&" . $querystring;
 					}
 				}
