@@ -4,6 +4,6 @@ $specialPageAliases = [];
 
 /** English */
 $specialPageAliases[ 'en' ] = [
-	'FundraiserLandingPage' => [ 'FundraiserLandingPage', 'FLP' ],
+	'FundraiserLandingPage' => [ 'LandingPage', 'FundraiserLandingPage', 'FLP' ],
 	'FundraiserRedirector' => [ 'FundraiserRedirector', 'FR' ],
 ];
