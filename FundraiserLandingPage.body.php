@@ -5,7 +5,7 @@
  *
  * @author Peter Gehres <pgehres@wikimedia.org>
  */
-class FundraiserLandingPage extends UnlistedSpecialPage  {
+class FundraiserLandingPage extends UnlistedSpecialPage {
 	function __construct() {
 		parent::__construct( 'FundraiserLandingPage' );
 	}
@@ -17,7 +17,7 @@ class FundraiserLandingPage extends UnlistedSpecialPage  {
 
 		if ( $wgContributionTrackingFundraiserMaintenance
 			|| $wgContributionTrackingFundraiserMaintenanceUnsched
-		){
+		) {
 			$this->getOutput()->redirect(
 				Title::newFromText( 'Special:FundraiserMaintenance' )->getFullURL(), '302'
 			);
@@ -122,10 +122,10 @@ class FundraiserLandingPage extends UnlistedSpecialPage  {
 	 * Country, Root. It is assumed that all parts of the title are separated
 	 * with '/'.
 	 *
-	 * @param Parser $parser   Reference to the WM parser object
-	 * @param string $page     The template page root to load
+	 * @param Parser $parser Reference to the WM parser object
+	 * @param string $page The template page root to load
 	 * @param string $language The language to attempt to localize onto
-	 * @param string $country  The country to attempt to localize onto
+	 * @param string $country The country to attempt to localize onto
 	 *
 	 * @return string The wikitext template
 	 */
@@ -156,9 +156,9 @@ class FundraiserLandingPage extends UnlistedSpecialPage  {
 	 * Language, Root. It is assumed that all parts of the title are separated
 	 * with '/'.
 	 *
-	 * @param Parser $parser   Reference to the WM parser object
-	 * @param string $page     The template page root to load
-	 * @param string $country  The country to attempt to localize onto
+	 * @param Parser $parser Reference to the WM parser object
+	 * @param string $page The template page root to load
+	 * @param string $country The country to attempt to localize onto
 	 * @param string $language The language to attempt to localize onto
 	 *
 	 * @return string The wikitext template
