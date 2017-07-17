@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Araceletorres"
+			"Araceletorres",
+			"Felipe L. Ewald"
 		]
 	},
-	"fundraiserlandingpage-desc": "Tome os parâmetros da URL e passe-os para o modelo especificado como variáveis de modelo."
+	"fundraiserlandingpage-desc": "Tome os parâmetros da URL e passe-os para o modelo especificado como variáveis de modelo"
 }
