@@ -4,6 +4,7 @@
 		"Peter Gehres",
 		"Ryan Kaldari"
 	],
+	"license-name": "GPL-2.0+",
 	"url": "https://www.mediawiki.org/wiki/Extension:FundraiserLandingPage",
 	"descriptionmsg": "fundraiserlandingpage-desc",
 	"version": "1.1.0",
