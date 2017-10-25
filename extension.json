@@ -45,9 +45,7 @@
 			"DE": "fundraiserlandingpage-wmde-landing-page",
 			"_merge_strategy": "array_plus"
 		},
-		"FundraiserLandingPageMaxAge": 600,
-		"ContributionTrackingFundraiserMaintenance": false,
-		"ContributionTrackingFundraiserMaintenanceUnsched": false
+		"FundraiserLandingPageMaxAge": 600
 	},
 	"manifest_version": 1
 }
