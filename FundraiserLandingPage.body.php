@@ -27,7 +27,7 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 		$request = $this->getRequest();
 
 		// Set squid age
-		$out->setSquidMaxage( $wgFundraiserLandingPageMaxAge );
+		$out->setCdnMaxage( $wgFundraiserLandingPageMaxAge );
 		$this->setHeaders();
 
 		// set the page title to something useful
