@@ -14,13 +14,27 @@
 		"FundraiserRedirector": "FundraiserRedirector.body.php",
 		"FundraiserLandingPageHooks": "FundraiserLandingPage.hooks.php"
 	},
+	"ResourceModules": {
+		"ext.fundraiserLandingPage.LogPageview": {
+			"dependencies": [
+				"mediawiki.Uri"
+			],
+			"scripts": "ext.fundraiserLandingPage.LogPageview.js"
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "/resources",
+		"remoteExtPath": "FundraiserLandingPage/resources"
+	},
 	"MessagesDirs": {
 		"FundraiserLandingPage": [
 			"i18n"
 		]
 	},
 	"Hooks": {
-		"ParserFirstCallInit": "FundraiserLandingPageHooks::onParserFirstCallInit"
+		"ParserFirstCallInit": "FundraiserLandingPageHooks::onParserFirstCallInit",
+		"BeforePageDisplay": "FundraiserLandingPageHooks::onBeforePageDisplay",
+		"ResourceLoaderGetConfigVars": "FundraiserLandingPageHooks::onResourceLoaderGetConfigVars"
 	},
 	"ExtensionMessagesFiles": {
 		"FundraiserLandingPageAlias": "FundraiserLandingPage.alias.php",
@@ -45,7 +59,8 @@
 			"DE": "fundraiserlandingpage-wmde-landing-page",
 			"_merge_strategy": "array_plus"
 		},
-		"FundraiserLandingPageMaxAge": 600
+		"FundraiserLandingPageMaxAge": 600,
+		"FundraiserLandingPageELSampleRate": 0.01
 	},
 	"manifest_version": 1
 }
