@@ -3,6 +3,7 @@
  */
 ( function ( $, mw ) {
 	var urlParams  = ( new mw.Uri() ).query,
+		sampleRateParamAsFloat = parseFloat( urlParams.fundraiserLandingPageELSampleRate ),
 		random = Math.random(),
 		sampleRate, eventData, elBaseUrl, elParams, elUrl,
 
@@ -34,9 +35,8 @@
 		LANDING_PAGE_EVENT_LOGGING_SCHEMA_REVISION = 17918163;
 
 	// Allow the configured sample rate to be overridden by a URL parameter
-	sampleRate = urlParams.fundraiserLandingPageELSampleRate !== undefined ?
-		urlParams.fundraiserLandingPageELSampleRate :
-		mw.config.get( 'wgFundraiserLandingPageELSampleRate' );
+	sampleRate = !isNaN( sampleRateParamAsFloat ) ?
+		sampleRateParamAsFloat : mw.config.get( 'wgFundraiserLandingPageELSampleRate' );
 
 	// Randomly select a proportion of pageviews as per sample rate
 	// NOTE: Sampling feature here is mainly for testing purposes. In production, 100%
