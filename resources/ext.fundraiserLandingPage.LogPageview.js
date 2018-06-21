@@ -22,6 +22,7 @@
 			link_id: [ "link_id" ],
 			template: [ "template" ],
 			appeal: [ "appeal" ],
+			appeal_template: [ "appeal_template", "appeal-template" ],
 			form_template: [ "form_template", "form-template" ],
 			form_countryspecific: [ "form_countryspecific", "form-countryspecific" ]
 		},
@@ -32,7 +33,7 @@
 		// EventLogging schema revision. Coordinate with on-wiki schema.
 		// Note: We don't register this in extension.json because we don't need the
 		// client-side schema module.
-		LANDING_PAGE_EVENT_LOGGING_SCHEMA_REVISION = 17918163;
+		LANDING_PAGE_EVENT_LOGGING_SCHEMA_REVISION = 18146199;
 
 	// Allow the configured sample rate to be overridden by a URL parameter
 	sampleRate = !isNaN( sampleRateParamAsFloat ) ?
