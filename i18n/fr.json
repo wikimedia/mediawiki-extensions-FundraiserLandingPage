@@ -4,5 +4,6 @@
 			"Gomoko"
 		]
 	},
-	"fundraiserlandingpage-desc": "Prends les paramètres de l'URL et les passe au modèle spécifié comme variables de modèle"
+	"fundraiserlandingpage-desc": "Prends les paramètres de l'URL et les passe au modèle spécifié comme variables de modèle",
+	"fundraiserlandingpage-wmch-landing-page": "https://www.wikimedia.ch/fr/faire-un-don/"
 }

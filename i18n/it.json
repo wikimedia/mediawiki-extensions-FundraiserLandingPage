@@ -4,5 +4,6 @@
 			"F. Cosoleto"
 		]
 	},
-	"fundraiserlandingpage-desc": "Accetta parametri URL e li passa al template specificato come variabili di template"
+	"fundraiserlandingpage-desc": "Accetta parametri URL e li passa al template specificato come variabili di template",
+	"fundraiserlandingpage-wmch-landing-page": "https://www.wikimedia.ch/it/effettuate-una-donazione/"
 }
