@@ -127,7 +127,7 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 	 * @param string $language The language to attempt to localize onto
 	 * @param string $country The country to attempt to localize onto
 	 *
-	 * @return string The wikitext template
+	 * @return array The wikitext template
 	 */
 	public static function fundraiserLandingPageSwitchLanguage( $parser, $page = '',
 		$language = 'en', $country = 'XX'
@@ -161,7 +161,7 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 	 * @param string $country The country to attempt to localize onto
 	 * @param string $language The language to attempt to localize onto
 	 *
-	 * @return string The wikitext template
+	 * @return array The wikitext template
 	 */
 	public static function fundraiserLandingPageSwitchCountry( $parser, $page = '', $country = 'XX',
 		$language = 'en'
