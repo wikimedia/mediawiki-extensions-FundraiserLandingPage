@@ -102,6 +102,8 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 	 *                 results are returned.
 	 *
 	 * @return mixed|String A string matching the regex or an empty string
+	 * @suppress SecurityCheck-DoubleEscaped double escaping is on purpose per the inline
+	 *                                       comment
 	 */
 	private static function fundraiserLandingPageMakeSafe( $string, $default = '' ) {
 		if ( $default != '' ) {
