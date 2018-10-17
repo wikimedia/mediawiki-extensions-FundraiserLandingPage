@@ -89,7 +89,7 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 		$parserOptions->setAllowUnsafeRawHtml( true );
 
 		// print the output to the page
-		$out->addWikiText( $output );
+		$out->addWikiTextAsInterface( $output );
 	}
 
 	/**
