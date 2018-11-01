@@ -6,11 +6,11 @@
  * @author Peter Gehres <pgehres@wikimedia.org>
  */
 class FundraiserLandingPage extends UnlistedSpecialPage {
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'FundraiserLandingPage' );
 	}
 
-	function execute( $par ) {
+	public function execute( $par ) {
 		global $wgFundraiserLPDefaults, $wgFundraiserLandingPageMaxAge,
 			   $wgContributionTrackingFundraiserMaintenance,
 			   $wgContributionTrackingFundraiserMaintenanceUnsched;

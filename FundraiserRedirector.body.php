@@ -7,11 +7,11 @@
  * @author Peter Gehres <pgehres@wikimedia.org>
  */
 class FundraiserRedirector extends UnlistedSpecialPage {
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'FundraiserRedirector' );
 	}
 
-	function execute( $par ) {
+	public function execute( $par ) {
 		global $wgFundraiserLPDefaults, $wgFundraiserLandingPageChapters;
 
 		// Country passed in the URL param gets first precedence.
