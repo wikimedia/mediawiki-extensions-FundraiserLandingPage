@@ -13,9 +13,9 @@
 		"MediaWiki": ">= 1.32.0"
 	},
 	"AutoloadClasses": {
-		"FundraiserLandingPage": "FundraiserLandingPage.body.php",
-		"FundraiserRedirector": "FundraiserRedirector.body.php",
-		"FundraiserLandingPageHooks": "FundraiserLandingPage.hooks.php"
+		"FundraiserLandingPage": "includes/specials/FundraiserLandingPage.php",
+		"FundraiserRedirector": "includes/specials/FundraiserRedirector.php",
+		"FundraiserLandingPageHooks": "includes/FundraiserLandingPageHooks.php"
 	},
 	"ResourceModules": {
 		"ext.fundraiserLandingPage.LogPageview": {
