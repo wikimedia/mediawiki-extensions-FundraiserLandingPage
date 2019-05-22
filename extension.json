@@ -23,7 +23,8 @@
 	"ResourceModules": {
 		"ext.fundraiserLandingPage.LogPageview": {
 			"dependencies": [
-				"mediawiki.Uri"
+				"mediawiki.Uri",
+				"ext.eventLogging"
 			],
 			"scripts": "ext.fundraiserLandingPage.LogPageview.js"
 		}
@@ -49,6 +50,13 @@
 	"SpecialPages": {
 		"FundraiserLandingPage": "FundraiserLandingPage",
 		"FundraiserRedirector": "FundraiserRedirector"
+	},
+	"attributes": {
+		"EventLogging": {
+			"Schemas": {
+				"LandingPageImpression": 18146199
+			}
+		}
 	},
 	"config": {
 		"FundraiserLPDefaults": {

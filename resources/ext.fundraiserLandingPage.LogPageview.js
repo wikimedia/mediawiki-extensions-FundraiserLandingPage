@@ -28,12 +28,7 @@
 		},
 
 		// EventLogging schema name for logging landing page pageviews
-		LANDING_PAGE_EVENT_LOGGING_SCHEMA = 'LandingPageImpression',
-
-		// EventLogging schema revision. Coordinate with on-wiki schema.
-		// Note: We don't register this in extension.json because we don't need the
-		// client-side schema module.
-		LANDING_PAGE_EVENT_LOGGING_SCHEMA_REVISION = 18146199;
+		LANDING_PAGE_EVENT_LOGGING_SCHEMA = 'LandingPageImpression';
 
 	// Allow the configured sample rate to be overridden by a URL parameter
 	sampleRate = !isNaN( sampleRateParamAsFloat ) ?
@@ -61,28 +56,6 @@
 			}
 		} );
 
-		// NOTE: Manually sending an event--coordinate with EventLogging extension!
-		elBaseUrl = mw.config.get( 'wgEventLoggingBaseUri' );
-
-		elParams = {
-			event: eventData,
-			revision: LANDING_PAGE_EVENT_LOGGING_SCHEMA_REVISION,
-			schema: LANDING_PAGE_EVENT_LOGGING_SCHEMA,
-			webHost: location.hostname,
-			wiki: mw.config.get( 'wgDBname' )
-		};
-
-		// As per mw.eventLogging.makeBeaconUrl()
-		elUrl = elBaseUrl + '?' + encodeURIComponent( JSON.stringify( elParams ) ) + ';';
-
-		if ( navigator.sendBeacon ) {
-			try {
-				navigator.sendBeacon( elUrl );
-			} catch ( e ) {}
-		} else {
-			setTimeout( function () {
-				document.createElement( 'img' ).src = elUrl;
-			}, 0 );
-		}
+		mw.eventLog.logEvent( LANDING_PAGE_EVENT_LOGGING_SCHEMA, eventData );
 	}
 }( jQuery, mediaWiki ) );
