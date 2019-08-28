@@ -51,12 +51,8 @@
 		"FundraiserLandingPage": "FundraiserLandingPage",
 		"FundraiserRedirector": "FundraiserRedirector"
 	},
-	"attributes": {
-		"EventLogging": {
-			"Schemas": {
-				"LandingPageImpression": 18146199
-			}
-		}
+	"EventLoggingSchemas": {
+		"LandingPageImpression": 18146199
 	},
 	"config": {
 		"FundraiserLPDefaults": {
