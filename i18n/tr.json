@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"BaRaN6161 TURK"
+		]
+	},
+	"fundraiserlandingpage-desc": "URL parametrelerini alır ve bunları belirtilen değişkenlere şablon değişkenleri olarak iletir"
+}
