@@ -66,6 +66,7 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 		$country = self::fundraiserLandingPageMakeSafe( $country );
 		$output .= "| country = $country\n";
 
+		// @phan-suppress-next-line PhanUselessBinaryAddRight
 		$excludeKeys = $requiredParams + [ 'template', 'country', 'title' ];
 
 		// add any other parameters passed in the querystring
