@@ -98,11 +98,11 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 	 * values to letters, numbers, hypens, underscores, and the forward slash.
 	 * The function also performs standard escaping of the passed values.
 	 *
-	 * @param $string  string The unsafe string to escape and check for invalid characters
-	 * @param $default string A default value to return if when making the $string safe no
+	 * @param string $string The unsafe string to escape and check for invalid characters
+	 * @param string $default A default value to return if when making the $string safe no
 	 *                 results are returned.
 	 *
-	 * @return mixed|String A string matching the regex or an empty string
+	 * @return string A string matching the regex or an empty string
 	 * @suppress SecurityCheck-DoubleEscaped double escaping is on purpose per the inline
 	 *                                       comment
 	 */
