@@ -14,6 +14,9 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 		parent::__construct( 'FundraiserRedirector' );
 	}
 
+	/**
+	 * @param string $par
+	 */
 	public function execute( $par ) {
 		global $wgFundraiserLPDefaults, $wgFundraiserLandingPageChapters;
 

@@ -10,6 +10,9 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 		parent::__construct( 'FundraiserLandingPage' );
 	}
 
+	/**
+	 * @param string $par
+	 */
 	public function execute( $par ) {
 		global $wgFundraiserLPDefaults, $wgFundraiserLandingPageMaxAge,
 			   $wgContributionTrackingFundraiserMaintenance,
