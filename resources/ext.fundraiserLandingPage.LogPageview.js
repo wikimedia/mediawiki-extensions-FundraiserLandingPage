@@ -1,8 +1,8 @@
 /**
  * Send an EventLogging event for all pageviews
  */
-( function ( $, mw ) {
-	var urlParams  = ( new mw.Uri() ).query,
+( function () {
+	var urlParams = ( new mw.Uri() ).query,
 		sampleRateParamAsFloat = parseFloat( urlParams.fundraiserLandingPageELSampleRate ),
 		random = Math.random(),
 		sampleRate, eventData, elBaseUrl, elParams, elUrl,
@@ -12,19 +12,19 @@
 		// query parameters that may contain data to send with those EL properties.
 		// Query parameters are checked in the order they appear.
 		QUERY_EL_MAP = {
-			language: [ "uselang", "language" ],
-			country: [ "country" ],
-			utm_source: [ "utm_source" ],
-			utm_campaign: [ "utm_campaign" ],
-			utm_medium: [ "utm_medium" ],
-			utm_key: [ "utm_key" ],
-			contact_id: [ "contact_id" ],
-			link_id: [ "link_id" ],
-			template: [ "template" ],
-			appeal: [ "appeal" ],
-			appeal_template: [ "appeal_template", "appeal-template" ],
-			form_template: [ "form_template", "form-template" ],
-			form_countryspecific: [ "form_countryspecific", "form-countryspecific" ]
+			language: [ 'uselang', 'language' ],
+			country: [ 'country' ],
+			utm_source: [ 'utm_source' ],
+			utm_campaign: [ 'utm_campaign' ],
+			utm_medium: [ 'utm_medium' ],
+			utm_key: [ 'utm_key' ],
+			contact_id: [ 'contact_id' ],
+			link_id: [ 'link_id' ],
+			template: [ 'template' ],
+			appeal: [ 'appeal' ],
+			appeal_template: [ 'appeal_template', 'appeal-template' ],
+			form_template: [ 'form_template', 'form-template' ],
+			form_countryspecific: [ 'form_countryspecific', 'form-countryspecific' ]
 		},
 
 		// EventLogging schema name for logging landing page pageviews
@@ -58,4 +58,4 @@
 
 		mw.eventLog.logEvent( LANDING_PAGE_EVENT_LOGGING_SCHEMA, eventData );
 	}
-}( jQuery, mediaWiki ) );
+}() );
