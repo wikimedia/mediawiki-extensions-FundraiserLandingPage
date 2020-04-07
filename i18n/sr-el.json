@@ -1,4 +1,6 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": []
+	},
 	"fundraiserlandingpage-desc": "Uzima parametre veze i prosleđuje ih navedenom šablonu kao promenljive šablona"
 }
