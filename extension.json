@@ -66,16 +66,14 @@
 				"appeal-template": "Appeal-template-default",
 				"form-template": "Form-template-default",
 				"form-countryspecific": "Form-countryspecific-control",
-				"country": "XX",
-				"_merge_strategy": "array_plus"
+				"country": "XX"
 			},
 			"merge_strategy": "array_plus"
 		},
 		"FundraiserLandingPageChapters": {
 			"value": {
 				"CH": "fundraiserlandingpage-wmch-landing-page",
-				"DE": "fundraiserlandingpage-wmde-landing-page",
-				"_merge_strategy": "array_plus"
+				"DE": "fundraiserlandingpage-wmde-landing-page"
 			},
 			"merge_strategy": "array_plus"
 		},
