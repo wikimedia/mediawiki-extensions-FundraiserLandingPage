@@ -51,26 +51,40 @@
 		"FundraiserLandingPage": "FundraiserLandingPage",
 		"FundraiserRedirector": "FundraiserRedirector"
 	},
-	"EventLoggingSchemas": {
-		"LandingPageImpression": 18146199
+	"attributes": {
+		"EventLogging": {
+			"Schemas": {
+				"LandingPageImpression": 18146199
+			}
+		}
 	},
 	"config": {
 		"FundraiserLPDefaults": {
-			"template": "Lp-layout-default",
-			"appeal": "Appeal-default",
-			"appeal-template": "Appeal-template-default",
-			"form-template": "Form-template-default",
-			"form-countryspecific": "Form-countryspecific-control",
-			"country": "XX",
-			"_merge_strategy": "array_plus"
+			"value": {
+				"template": "Lp-layout-default",
+				"appeal": "Appeal-default",
+				"appeal-template": "Appeal-template-default",
+				"form-template": "Form-template-default",
+				"form-countryspecific": "Form-countryspecific-control",
+				"country": "XX",
+				"_merge_strategy": "array_plus"
+			},
+			"merge_strategy": "array_plus"
 		},
 		"FundraiserLandingPageChapters": {
-			"CH": "fundraiserlandingpage-wmch-landing-page",
-			"DE": "fundraiserlandingpage-wmde-landing-page",
-			"_merge_strategy": "array_plus"
+			"value": {
+				"CH": "fundraiserlandingpage-wmch-landing-page",
+				"DE": "fundraiserlandingpage-wmde-landing-page",
+				"_merge_strategy": "array_plus"
+			},
+			"merge_strategy": "array_plus"
 		},
-		"FundraiserLandingPageMaxAge": 600,
-		"FundraiserLandingPageELSampleRate": 0.01
+		"FundraiserLandingPageMaxAge": {
+			"value": 600
+		},
+		"FundraiserLandingPageELSampleRate": {
+			"value": 0.01
+		}
 	},
-	"manifest_version": 1
+	"manifest_version": 2
 }
