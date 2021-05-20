@@ -98,10 +98,10 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 
 	/**
 	 * This function limits the possible characters passed as template keys and
-	 * values to letters, numbers, hypens, underscores, and the forward slash.
+	 * values to letters, numbers, hyphens, underscores, and the forward slash.
 	 * The function also performs standard escaping of the passed values.
 	 *
-	 * @param string $string The unsafe string to escape and check for invalid characters
+	 * @param mixed $value The unsafe value to escape and check for invalid characters
 	 * @param string $default A default value to return if when making the $string safe no
 	 *                 results are returned.
 	 *
@@ -109,12 +109,17 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 	 * @suppress SecurityCheck-DoubleEscaped double escaping is on purpose per the inline
 	 *                                       comment
 	 */
-	private static function fundraiserLandingPageMakeSafe( $string, $default = '' ) {
+	private static function fundraiserLandingPageMakeSafe( $value, $default = '' ) {
 		if ( $default != '' ) {
 			$default = self::fundraiserLandingPageMakeSafe( $default );
 		}
 
-		$num = preg_match( '/^([-a-zA-Z0-9_\/]+)$/', $string, $matches );
+		if ( !is_string( $value ) ) {
+			// In case someone has passed in an array as a request parameter
+			return $default;
+		}
+
+		$num = preg_match( '/^([-a-zA-Z0-9_\/]+)$/', $value, $matches );
 
 		if ( $num == 1 ) {
 			# theoretically this is overkill, but better safe than sorry
