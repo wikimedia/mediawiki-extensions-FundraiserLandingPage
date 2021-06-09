@@ -54,7 +54,7 @@
 	"attributes": {
 		"EventLogging": {
 			"Schemas": {
-				"LandingPageImpression": 18146199
+				"LandingPageImpression": "/analytics/legacy/landingpageimpression/1.0.0"
 			}
 		}
 	},
