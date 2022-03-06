@@ -1,10 +1,18 @@
 <?php
+
+namespace MediaWiki\Extension\FundraiserLandingPage\Specials;
+
 /*
  * SpecialPage definition for FundraiserLandingPage.  Extending UnlistedSpecialPage
  * since this page does not need to listed in Special:SpecialPages.
  *
  * @author Peter Gehres <pgehres@wikimedia.org>
  */
+
+use Parser;
+use Title;
+use UnlistedSpecialPage;
+
 class FundraiserLandingPage extends UnlistedSpecialPage {
 	public function __construct() {
 		parent::__construct( 'FundraiserLandingPage' );
@@ -15,8 +23,8 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 	 */
 	public function execute( $par ) {
 		global $wgFundraiserLPDefaults, $wgFundraiserLandingPageMaxAge,
-			   $wgContributionTrackingFundraiserMaintenance,
-			   $wgContributionTrackingFundraiserMaintenanceUnsched;
+			$wgContributionTrackingFundraiserMaintenance,
+			$wgContributionTrackingFundraiserMaintenanceUnsched;
 
 		if ( $wgContributionTrackingFundraiserMaintenance
 			|| $wgContributionTrackingFundraiserMaintenanceUnsched

@@ -7,6 +7,12 @@
  * @author Peter Gehres <pgehres@wikimedia.org>
  */
 
+namespace MediaWiki\Extension\FundraiserLandingPage\Specials;
+
+use Language;
+use SpecialPage;
+use UnlistedSpecialPage;
+
 class FundraiserRedirector extends UnlistedSpecialPage {
 	public function __construct() {
 		parent::__construct( 'FundraiserRedirector' );
@@ -73,7 +79,7 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 		}
 
 		// set the default redirect
-		$redirectURL = $this->getTitleFor( 'FundraiserLandingPage' )->getLocalUrl( $params );
+		$redirectURL = SpecialPage::getTitleFor( 'FundraiserLandingPage' )->getLocalUrl( $params );
 
 		// if the country is covered by a payment-processing chapter, redirect
 		// the donor to the chapter's default landing page
@@ -137,10 +143,7 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 			'UZ', 'VU', 'VE', 'VN', 'VG', 'VI', 'WF', 'EH', 'YE', 'ZM', 'ZW',
 		];
 
-		if ( in_array( $country, $iso_3166_codes ) ) {
-			return true;
-		}
-		return false;
+		return in_array( $country, $iso_3166_codes );
 	}
 
 }

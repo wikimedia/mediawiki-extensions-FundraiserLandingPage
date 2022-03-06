@@ -1,5 +1,13 @@
 <?php
-class FundraiserLandingPageHooks {
+
+namespace MediaWiki\Extension\FundraiserLandingPage;
+
+use MediaWiki\Extension\FundraiserLandingPage\Specials\FundraiserLandingPage;
+use OutputPage;
+use Parser;
+use Skin;
+
+class Hooks {
 	/**
 	 * Register the parser function hooks 'switchlanguage' and 'switchcountry'
 	 * with the MW backend.
@@ -11,11 +19,11 @@ class FundraiserLandingPageHooks {
 	public static function onParserFirstCallInit( $parser ) {
 		$parser->setFunctionHook(
 			'switchlanguage',
-			'FundraiserLandingPage::fundraiserLandingPageSwitchLanguage'
+			[ FundraiserLandingPage::class, 'fundraiserLandingPageSwitchLanguage' ]
 		);
 		$parser->setFunctionHook(
 			'switchcountry',
-			'FundraiserLandingPage::fundraiserLandingPageSwitchCountry'
+			[ FundraiserLandingPage::class, 'fundraiserLandingPageSwitchCountry' ]
 		);
 
 		// Return true so that MediaWiki continues to load extensions.

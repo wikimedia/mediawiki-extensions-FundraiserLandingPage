@@ -15,10 +15,8 @@
 			"EventLogging": "*"
 		}
 	},
-	"AutoloadClasses": {
-		"FundraiserLandingPage": "includes/specials/FundraiserLandingPage.php",
-		"FundraiserRedirector": "includes/specials/FundraiserRedirector.php",
-		"FundraiserLandingPageHooks": "includes/FundraiserLandingPageHooks.php"
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\FundraiserLandingPage\\": "includes/"
 	},
 	"ResourceModules": {
 		"ext.fundraiserLandingPage.LogPageview": {
@@ -39,17 +37,17 @@
 		]
 	},
 	"Hooks": {
-		"ParserFirstCallInit": "FundraiserLandingPageHooks::onParserFirstCallInit",
-		"BeforePageDisplay": "FundraiserLandingPageHooks::onBeforePageDisplay",
-		"ResourceLoaderGetConfigVars": "FundraiserLandingPageHooks::onResourceLoaderGetConfigVars"
+		"ParserFirstCallInit": "MediaWiki\\Extension\\FundraiserLandingPage\\Hooks::onParserFirstCallInit",
+		"BeforePageDisplay": "MediaWiki\\Extension\\FundraiserLandingPage\\Hooks::onBeforePageDisplay",
+		"ResourceLoaderGetConfigVars": "MediaWiki\\Extension\\FundraiserLandingPage\\Hooks::onResourceLoaderGetConfigVars"
 	},
 	"ExtensionMessagesFiles": {
 		"FundraiserLandingPageAlias": "FundraiserLandingPage.alias.php",
 		"FundraiserLandingPageMagic": "FundraiserLandingPage.i18n.magic.php"
 	},
 	"SpecialPages": {
-		"FundraiserLandingPage": "FundraiserLandingPage",
-		"FundraiserRedirector": "FundraiserRedirector"
+		"FundraiserLandingPage": "MediaWiki\\Extension\\FundraiserLandingPage\\Specials\\FundraiserLandingPage",
+		"FundraiserRedirector": "MediaWiki\\Extension\\FundraiserLandingPage\\Specials\\FundraiserRedirector"
 	},
 	"attributes": {
 		"EventLogging": {
