@@ -7,8 +7,6 @@
  * @author Peter Gehres <pgehres@wikimedia.org>
  */
 
-use Wikimedia\IPUtils;
-
 class FundraiserRedirector extends UnlistedSpecialPage {
 	public function __construct() {
 		parent::__construct( 'FundraiserRedirector' );
@@ -32,13 +30,6 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 			if ( $geoip ) {
 				$components = explode( ':', $geoip );
 				$country = $components[0];
-			}
-		}
-		// If no country is available yet, do a GeoIP lookup.
-		if ( !$country && function_exists( 'geoip_country_code_by_name' ) ) {
-			$ip = $this->getRequest()->getIP();
-			if ( IPUtils::isValid( $ip ) ) {
-				$country = geoip_country_code_by_name( $ip );
 			}
 		}
 		// If country still isn't set, set it to the default
