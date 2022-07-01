@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gomoko"
+			"Gomoko",
+			"Verdy p"
 		]
 	},
-	"fundraiserlandingpage-desc": "Prends les paramètres de l'URL et les passe au modèle spécifié comme variables de modèle"
+	"fundraiserlandingpage-desc": "Prends les paramètres de l’URL et les passe au modèle spécifié comme variables de modèle."
 }
