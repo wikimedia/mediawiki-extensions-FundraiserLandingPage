@@ -38,8 +38,19 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 				$country = $components[0];
 			}
 		}
-		// If country still isn't set, set it to the default
+
 		if ( !$country ) {
+			// If country isn't set, try realoding the page (redirecting to the same page
+			// with a 'reloaded' URL param to prevent a loop). This may be necessary if
+			// no GeoIP cookie was previously set for this domain. While our front-end
+			// cache showuld always set a GeoIP cookie, it won't be visible server-side
+			// until it's reflected back by the browser. For details, see T317427.
+			if ( !$this->getRequest()->getBool( 'reloaded' ) ) {
+				$this->reload();
+				return;
+			}
+
+			// Still no country? use the default.
 			$country = $wgFundraiserLPDefaults[ 'country' ];
 		}
 
@@ -70,7 +81,9 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 		];
 
 		// Pass any other params that are set
-		$excludeKeys = [ 'country', 'title' ];
+		// If we arrived here with a 'reloaded' param, don't pass that along when
+		// redirecting to Special:FundraiserLandingPage.
+		$excludeKeys = [ 'country', 'title', 'reloaded' ];
 		if ( $this->getRequest()->getQueryValuesOnly() ) {
 			foreach ( $this->getRequest()->getQueryValuesOnly() as $key => $value ) {
 				// Skip the required variables
@@ -109,6 +122,27 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 			}
 		}
 		// Redirect
+		$this->getOutput()->redirect( $redirectURL );
+	}
+
+	/**
+	 * Reload the page by redirecting to the same URL, adding a 'reloaded' URL param,
+	 * and preserving other params from the current request.
+	 *
+	 * @return void
+	 */
+	private function reload() {
+		$params = $this->getRequest()->getQueryValuesOnly();
+
+		// Title may be re-added below by getTitleFor()
+		unset( $params[ 'title' ] );
+
+		// 'reloaded' param used to prevent an infinite redirect loop
+		$params[ 'reloaded' ] = 'true';
+
+		$redirectURL = SpecialPage::getTitleFor( 'FundraiserRedirector' )
+			->getLocalUrl( $params );
+
 		$this->getOutput()->redirect( $redirectURL );
 	}
 
