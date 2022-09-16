@@ -71,10 +71,12 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 
 		// Pass any other params that are set
 		$excludeKeys = [ 'country', 'title' ];
-		foreach ( $this->getRequest()->getValues() as $key => $value ) {
-			// Skip the required variables
-			if ( !in_array( $key, $excludeKeys ) ) {
-				$params[$key] = $value;
+		if ( $this->getRequest()->getQueryValuesOnly() ) {
+			foreach ( $this->getRequest()->getQueryValuesOnly() as $key => $value ) {
+				// Skip the required variables
+				if ( !in_array( $key, $excludeKeys ) ) {
+					$params[$key] = $value;
+				}
 			}
 		}
 

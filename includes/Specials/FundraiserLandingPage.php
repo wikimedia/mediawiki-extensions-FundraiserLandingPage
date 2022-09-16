@@ -80,18 +80,21 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 		// @phan-suppress-next-line PhanUselessBinaryAddRight
 		$excludeKeys = $requiredParams + [ 'template', 'country', 'title' ];
 
-		// add any other parameters passed in the querystring
-		foreach ( $request->getValues() as $k_unsafe => $v_unsafe ) {
-			// skip the required variables
-			if ( in_array( $k_unsafe, $excludeKeys ) ) {
-				continue;
+		// if there are any other parameters passed in the querystring, add them
+		if ( $request->getQueryValuesOnly() ) {
+			foreach ( $request->getQueryValuesOnly() as $k_unsafe => $v_unsafe ) {
+				// skip the required variables
+				if ( in_array( $k_unsafe, $excludeKeys ) ) {
+					continue;
+				}
+				// get the variable's name and value
+				$key = self::fundraiserLandingPageMakeSafe( $k_unsafe );
+				$val = self::fundraiserLandingPageMakeSafe( $v_unsafe );
+				// print to the template in wiki-syntax
+				$output .= "| $key = $val\n";
 			}
-			// get the variable's name and value
-			$key = self::fundraiserLandingPageMakeSafe( $k_unsafe );
-			$val = self::fundraiserLandingPageMakeSafe( $v_unsafe );
-			// print to the template in wiki-syntax
-			$output .= "| $key = $val\n";
 		}
+
 		// close the template call
 		$output .= "}}";
 
