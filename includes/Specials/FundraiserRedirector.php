@@ -9,7 +9,7 @@
 
 namespace MediaWiki\Extension\FundraiserLandingPage\Specials;
 
-use Language;
+use MediaWiki\MediaWikiServices;
 use SpecialPage;
 use UnlistedSpecialPage;
 
@@ -58,7 +58,7 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 		$language = $this->getRequest()->getVal( 'uselang' );
 		// If not set, try the browser language
 		if ( !$language ) {
-			$mwLanguages = array_keys( Language::fetchLanguageNames() );
+			$mwLanguages = array_keys( MediaWikiServices::getInstance()->getLanguageNameUtils()->getLanguageNames() );
 			$languages = array_keys( $this->getRequest()->getAcceptLang() );
 			foreach ( $languages as $tryLanguage ) {
 				if ( in_array( $tryLanguage, $mwLanguages ) ) {
