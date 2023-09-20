@@ -39,6 +39,10 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 
 		// Set squid age
 		$out->setCdnMaxage( $wgFundraiserLandingPageMaxAge );
+
+		if ( $this->isFundraiseUp() ) {
+			$out->addScript( $this->getFundraiseUpJavascript() );
+		}
 		$this->setHeaders();
 
 		// set the page title to something useful
@@ -207,5 +211,31 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 		}
 
 		return [ "{{Template:$tpltext}}", 'noparse' => false ];
+	}
+
+	/**
+	 * Check if template is fundraiseup
+	 * @return bool
+	 */
+	private function isFundraiseUp() {
+		return $this->getRequest()->getVal( 'fundraiseupScript' ) === "1";
+	}
+
+	/**
+	 * Javascript to add fundraiseup to DonateWiki page
+	 *
+	 * @return string
+	 */
+	private function getFundraiseUpJavascript() {
+		return <<<EOF
+			<script>(function(w,d,s,n,a){if(!w[n]){var l='call,catch,on,once,set,then,track'
+			.split(','),i,o=function(n){return'function'==typeof n?o.l.push([arguments])&&o
+			:function(){return o.l.push([n,arguments])&&o}},t=d.getElementsByTagName(s)[0],
+			j=d.createElement(s);j.async=!0;j.src='https://cdn.fundraiseup.com/widget/'+a;
+			t.parentNode.insertBefore(j,t);o.s=Date.now();o.v=4;o.h=w.location.href;o.l=[];
+			for(i=0;i<7;i++)o[l[i]]=o(l[i]);w[n]=o}
+			})(window,document,'script','FundraiseUp','AVLMPSRU');
+			</script>
+EOF;
 	}
 }
