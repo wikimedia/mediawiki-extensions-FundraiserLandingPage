@@ -3,6 +3,7 @@
 		"authors": []
 	},
 	"fundraiserlandingpage-desc": "Takes URL parameters and passes them to the specified template as template variables",
+	"fundraiserlandingpage-meta-description": "Donate to the Wikimedia Foundation, the nonprofit that hosts Wikipedia and other crucial free knowledge projects. Each year, the generosity of the 2% of readers who donate allows us to expand the reach of Wikipedia and its sister projects. Our goal is to ensure knowledge remains freely available for generations to come and for that, we need your support.",
 	"fundraiserlandingpage-wmch-landing-page": "https://www.wikimedia.ch/donate/",
 	"fundraiserlandingpage-wmde-landing-page": "https://spenden.wikimedia.de/spenden/",
 	"fundraiserlandingpage-wmfr-landing-page": "https://dons.wikimedia.fr/dons.php",

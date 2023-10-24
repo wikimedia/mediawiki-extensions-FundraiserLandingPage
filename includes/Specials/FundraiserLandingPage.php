@@ -48,6 +48,9 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 		// set the page title to something useful
 		$out->setPageTitle( $this->msg( 'donate_interface-make-your-donation' ) );
 
+		// and add a <meta name="description"> tag to give search engines a useful blurb
+		$out->addMeta( 'description', $this->msg( 'fundraiserlandingpage-meta-description' ) );
+
 		// clear output variable to be safe
 		$output = '';
 

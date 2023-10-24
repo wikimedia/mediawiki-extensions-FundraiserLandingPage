@@ -6,6 +6,7 @@
 		]
 	},
 	"fundraiserlandingpage-desc": "{{desc|name=Fundraiser Landing Page|url=https://www.mediawiki.org/wiki/Extension:FundraiserLandingPage}}",
+	"fundraiserlandingpage-meta-description": "Text to serve in the 'description' HTML meta tag which is often shown in search engine results.",
 	"fundraiserlandingpage-wmch-landing-page": "{{notranslate}}Link to Wikimedia Switzerland's fundraiser landing page.",
 	"fundraiserlandingpage-wmde-landing-page": "{{notranslate}}Link to Wikimedia Germany's fundraiser landing page.",
 	"fundraiserlandingpage-wmfr-landing-page": "{{notranslate}}Link to Wikimedia France's fundraiser landing page.",
