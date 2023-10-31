@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"McDutchie",
 			"Siebrand"
 		]
 	},
-	"fundraiserlandingpage-desc": "Accepteert URL-parameters en geeft deze door aan de opgegeven sjabloon als sjabloonvariabelen"
+	"fundraiserlandingpage-desc": "Accepteert URL-parameters en geeft deze door aan de opgegeven sjabloon als sjabloonvariabelen",
+	"fundraiserlandingpage-meta-description": "Doneer aan de Wikimedia Foundation, de non-profitorganisatie waarbij Wikipedia en andere cruciale vrije-kennisprojecten zijn ondergebracht. Elk jaar is 2% van de lezers zo vrijgevig om te doneren, waardoor wij het bereik van Wikipedia en haar zusterprojecten uit kunnen breiden. Ons doel is ervoor te zorgen dat de kennis van de mensheid nog generaties lang vrij beschikbaar blijft. Daarvoor hebben wij uw steun hard nodig."
 }
