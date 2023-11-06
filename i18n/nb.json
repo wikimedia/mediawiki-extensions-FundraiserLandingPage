@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Danmichaelo"
+			"Danmichaelo",
+			"Jon Harald Søby"
 		]
 	},
-	"fundraiserlandingpage-desc": "Tar URL-parametre og sender de til den angitte malen som malvariabler"
+	"fundraiserlandingpage-desc": "Tar URL-parametre og sender de til den angitte malen som malvariabler",
+	"fundraiserlandingpage-meta-description": "Doner til Wikimedia Foundation, den ideelle organisasjonen som er vertskap for Wikipedia og andre viktige prosjekter med fri kunnskap. Hvert år gir 2 % av leserne en donasjon, og deres gavmildhet lar oss utvide rekkeviden til Wikipedia og dets søsterprosjekter. Målet vårt er å sikre at kunnskap er fritt tilgjengelig i mange generasjoner framover, og til det trenger vi din støtte."
 }
