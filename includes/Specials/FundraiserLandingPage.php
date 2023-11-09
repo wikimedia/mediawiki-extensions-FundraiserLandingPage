@@ -51,6 +51,9 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 		// and add a <meta name="description"> tag to give search engines a useful blurb
 		$out->addMeta( 'description', $this->msg( 'fundraiserlandingpage-meta-description' ) );
 
+		// And mark the page as allowed for search engine indexing (default for SpecialPages is noindex)
+		$out->setIndexPolicy( 'index' );
+
 		// clear output variable to be safe
 		$output = '';
 
