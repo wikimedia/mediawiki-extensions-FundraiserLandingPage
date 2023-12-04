@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dbc334"
+			"Dbc334",
+			"Eleassar"
 		]
 	},
-	"fundraiserlandingpage-desc": "Vzame parametre URL in jih posreduje navedeni predlogi kot spremenljivke predloge"
+	"fundraiserlandingpage-desc": "Vzame parametre URL in jih posreduje navedeni predlogi kot spremenljivke predloge",
+	"fundraiserlandingpage-meta-description": "Donirajte fundaciji Wikimedia, neprofitni organizaciji, ki gosti Wikipedijo in druge ključne projekte prostega znanja. Vsako leto nam radodarnost 2 odsotkov bralcev, ki prispevajo, omogoča razširitev dosega Wikipedije in njenih sorodnih projektov. Naš cilj je zagotoviti, da bo znanje ostalo prosto dostopno za prihodnje rodove, in za to potrebujemo vašo podporo."
 }
