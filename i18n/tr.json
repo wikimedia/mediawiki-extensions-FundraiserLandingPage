@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"BaRaN6161 TURK"
+			"BaRaN6161 TURK",
+			"Joseph"
 		]
 	},
-	"fundraiserlandingpage-desc": "URL parametrelerini alır ve bunları belirtilen değişkenlere şablon değişkenleri olarak iletir"
+	"fundraiserlandingpage-desc": "URL parametrelerini alır ve bunları belirtilen değişkenlere şablon değişkenleri olarak iletir",
+	"fundraiserlandingpage-meta-description": "Vikipedi'ye ve diğer önemli özgür bilgi projelerine ev sahipliği yapan, kar amacı gütmeyen kuruluş olan Wikimedia Vakfı'na bağış yapın. Her yıl, bağış yapan %2'lik okuyucuların cömertliği, Vikipedi'nin ve kardeş projelerinin erişim alanını genişletmemize olanak tanıyor. Amacımız bilginin gelecek nesillere ücretsiz olarak aktarılmasını sağlamaktır ve bunun için desteğinize ihtiyacımız var."
 }
