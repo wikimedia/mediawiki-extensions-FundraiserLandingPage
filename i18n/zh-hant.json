@@ -3,8 +3,10 @@
 		"authors": [
 			"Anakmalaysia",
 			"Cwlin0416",
+			"Kly",
 			"LNDDYL"
 		]
 	},
-	"fundraiserlandingpage-desc": "採用 URL 參數並將其作為模板變數傳遞給指定的模板"
+	"fundraiserlandingpage-desc": "採用 URL 參數並將其作為模板變數傳遞給指定的模板",
+	"fundraiserlandingpage-meta-description": "向維基媒體基金會捐款。維基媒體基金會是託管維基百科與其他重要免費知識計畫的非營利組織。每一年，2% 讀者的慷慨捐贈使我們能夠擴大維基百科及其姊妹計畫的影響範圍。我們的目標是確保下一代可以繼續免費取得知識，因此，我們需要您的支持。"
 }
