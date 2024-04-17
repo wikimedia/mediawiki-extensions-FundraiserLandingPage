@@ -14,10 +14,17 @@ use MediaWiki\Parser\Parser;
 use MediaWiki\Parser\ParserOptions;
 use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\Title\Title;
+use SkinFactory;
 
 class FundraiserLandingPage extends UnlistedSpecialPage {
-	public function __construct() {
+	/**
+	 * @var SkinFactory
+	 */
+	private $skinFactory;
+
+	public function __construct( SkinFactory $skinFactory ) {
 		parent::__construct( 'FundraiserLandingPage' );
+		$this->skinFactory = $skinFactory;
 	}
 
 	/**
@@ -28,6 +35,12 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 
 		$outputPage = $this->getOutput();
 		$request = $this->getRequest();
+		$context = $this->getContext();
+		if ( $this->getConfig()->get( 'FundraiserUseDonateSkin' ) ) {
+			$context->setSkin(
+				$this->skinFactory->makeSkin( 'donate' )
+			);
+		}
 
 		// Set squid age
 		$outputPage->setCdnMaxage( $config->get( 'FundraiserLandingPageMaxAge' ) );
