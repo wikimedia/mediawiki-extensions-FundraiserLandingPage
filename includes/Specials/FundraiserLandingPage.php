@@ -46,7 +46,14 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 		$this->setHeaders();
 
 		// set the page title to something useful
-		$out->setPageTitle( $this->msg( 'donate_interface-make-your-donation' ) );
+		$titleMsg = $this->msg( 'donate_interface-make-your-donation' );
+		if ( !is_callable( [ $out, 'setPageTitleMsg' ] ) ) {
+			// Backward compatibility with MW < 1.41
+			$out->setPageTitle( $titleMsg );
+		} else {
+			// MW >= 1.41
+			$out->setPageTitleMsg( $titleMsg );
+		}
 
 		// and add a <meta name="description"> tag to give search engines a useful blurb
 		$out->addMeta( 'description', $this->msg( 'fundraiserlandingpage-meta-description' ) );
