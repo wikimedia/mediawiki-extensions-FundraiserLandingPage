@@ -75,9 +75,9 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 			'uselang' => $language,
 			// set default tracking variables that will be overridden
 			// by anything passed in the query string
-			'utm_medium' => "spontaneous",
-			'utm_source' => "fr-redir",
-			'utm_campaign' => "spontaneous",
+			'wmf_medium' => "spontaneous",
+			'wmf_source' => "fr-redir",
+			'wmf_campaign' => "spontaneous",
 		];
 
 		// Pass any other params that are set
@@ -88,7 +88,8 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 			foreach ( $this->getRequest()->getQueryValuesOnly() as $key => $value ) {
 				// Skip the required variables
 				if ( !in_array( $key, $excludeKeys ) ) {
-					$params[$key] = $value;
+					// Change any starting with utm_ to wmf_ - T351325
+					$params[ str_replace( 'utm_', 'wmf_', $key ) ] = $value;
 				}
 			}
 		}
