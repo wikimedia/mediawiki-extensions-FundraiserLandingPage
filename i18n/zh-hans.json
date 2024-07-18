@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Yanmiao liu"
+			"Yanmiao liu",
+			"Huajing"
 		]
 	},
-	"fundraiserlandingpage-desc": "采用URL参数并将其作为模板变量传递给指定的模板"
+	"fundraiserlandingpage-desc": "采用URL参数并将其作为模板变量传递给指定的模板",
+	"fundraiserlandingpage-meta-description": "向维基媒体基金会捐款，该基金会是托管维基百科和其他重要的免费知识项目的非营利组织。每年，2% 的读者慷慨捐赠使我们能够扩大维基百科及其姊妹项目的影响力。我们的目标是确保下一代可以继续免费获取知识，因此，我们需要您的支持。"
 }
