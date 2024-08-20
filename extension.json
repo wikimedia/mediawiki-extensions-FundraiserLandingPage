@@ -75,6 +75,9 @@
 			},
 			"merge_strategy": "array_plus"
 		},
+		"FundraiserLandingPagePaymentsHost": {
+			"value": "https://payments.wikimedia.org"
+		},
 		"FundraiserLandingPageMaxAge": {
 			"value": 600
 		},

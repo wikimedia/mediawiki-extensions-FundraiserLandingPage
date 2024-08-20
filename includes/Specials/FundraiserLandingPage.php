@@ -61,6 +61,12 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 		// And mark the page as allowed for search engine indexing (default for SpecialPages is noindex)
 		$out->setIndexPolicy( 'index' );
 
+		// Instruct browsers to pre-fetch the DNS for payments-wiki to speed up loading the next form
+		$out->addHeadItem(
+			'payments-dns-prefetch',
+			'<link rel="dns-prefetch" href="' . $this->getConfig()->get( 'FundraiserLandingPagePaymentsHost' ) . '" />'
+		);
+
 		// clear output variable to be safe
 		$output = '';
 
