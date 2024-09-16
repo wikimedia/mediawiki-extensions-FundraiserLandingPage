@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Olli"
+			"Olli",
+			"Samoasambia"
 		]
 	},
-	"fundraiserlandingpage-desc": "Ottaa osoitemuuttujat ja lähettää ne tietylle mallineelle muuttujina"
+	"fundraiserlandingpage-desc": "Ottaa osoitemuuttujat ja lähettää ne tietylle mallineelle muuttujina",
+	"fundraiserlandingpage-meta-description": "Lahjoita Wikimedia Foundationille, voittoa tavoittelemattomalle järjestölle, joka isännöi Wikipediaa ja muita tärkeitä vapaan tiedon hankkeita. Joka vuosi 2 % lukijoista lahjoittaa meille, ja tämä anteliaisuus antaa meille mahdollisuuden laajentaa Wikipedian ja sen sisarhankkeiden vaikuttavuutta. Tavoitteenamme on varmistaa, että tieto on vapaasti saatavilla tuleville sukupolville, ja tarvitsemme tukeasi siihen."
 }
