@@ -2,8 +2,8 @@
  * Send an EventLogging event for all pageviews
  */
 ( function () {
-	var urlParams = ( new mw.Uri() ).query,
-		sampleRateParamAsFloat = parseFloat( urlParams.fundraiserLandingPageELSampleRate ),
+	var urlParams = new URL( location.href ).searchParams,
+		sampleRateParamAsFloat = parseFloat( urlParams.get( 'fundraiserLandingPageELSampleRate' ) ),
 		random = Math.random(),
 		sampleRate, eventData, elBaseUrl, elParams, elUrl,
 
@@ -49,8 +49,8 @@
 			for ( i = 0; i < urlParamsToTry.length; i++ ) {
 				urlParamToTry = urlParamsToTry[ i ];
 
-				if ( urlParamToTry in urlParams ) {
-					eventData[ elPropName ] = urlParams[ urlParamToTry ];
+				if ( urlParams.has( urlParamToTry ) ) {
+					eventData[ elPropName ] = urlParams.get( urlParamToTry );
 					break;
 				}
 			}

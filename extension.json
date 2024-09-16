@@ -21,7 +21,7 @@
 	"ResourceModules": {
 		"ext.fundraiserLandingPage.LogPageview": {
 			"dependencies": [
-				"mediawiki.Uri",
+				"web2017-polyfills",
 				"ext.eventLogging"
 			],
 			"scripts": "ext.fundraiserLandingPage.LogPageview.js"
