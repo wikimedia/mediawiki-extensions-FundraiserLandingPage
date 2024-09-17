@@ -22,8 +22,6 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 	 * @param string $par
 	 */
 	public function execute( $par ) {
-		global $wgFundraiserLPDefaults, $wgFundraiserLandingPageChapters;
-
 		// Country passed in the URL param gets first precedence.
 		$country = $this->getRequest()->getVal( 'country' );
 		if ( !self::isValidIsoCountryCode( $country ) ) {
@@ -39,6 +37,7 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 			}
 		}
 
+		$config = $this->getConfig();
 		if ( !$country ) {
 			// If country isn't set, try realoding the page (redirecting to the same page
 			// with a 'reloaded' URL param to prevent a loop). This may be necessary if
@@ -51,7 +50,8 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 			}
 
 			// Still no country? use the default.
-			$country = $wgFundraiserLPDefaults[ 'country' ];
+			$fundraiserLPDefaults = $config->get( 'FundraiserLPDefaults' );
+			$country = $fundraiserLPDefaults[ 'country' ];
 		}
 
 		// Set the language parameter
@@ -99,9 +99,10 @@ class FundraiserRedirector extends UnlistedSpecialPage {
 
 		// if the country is covered by a payment-processing chapter, redirect
 		// the donor to the chapter's default landing page
-		if ( array_key_exists( $params['country'], $wgFundraiserLandingPageChapters ) ) {
+		$fundraiserLandingPageChapters = $config->get( 'FundraiserLandingPageChapters' );
+		if ( array_key_exists( $params['country'], $fundraiserLandingPageChapters ) ) {
 			// Get the message key for the chapter's landing page
-			$message_key = $wgFundraiserLandingPageChapters[ $params['country'] ];
+			$message_key = $fundraiserLandingPageChapters[ $params['country'] ];
 			// Get the url for the chapter's landing page
 			$message = $this->msg( $message_key )->plain();
 			// if the message is not equal to the default message that is returned

@@ -22,12 +22,9 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 	 * @param string $par
 	 */
 	public function execute( $par ) {
-		global $wgFundraiserLPDefaults, $wgFundraiserLandingPageMaxAge,
-			$wgContributionTrackingFundraiserMaintenance,
-			$wgContributionTrackingFundraiserMaintenanceUnsched;
-
-		if ( $wgContributionTrackingFundraiserMaintenance
-			|| $wgContributionTrackingFundraiserMaintenanceUnsched
+		$config = $this->getConfig();
+		if ( $config->get( 'ContributionTrackingFundraiserMaintenance' )
+			|| $config->get( 'ContributionTrackingFundraiserMaintenanceUnsched' )
 		) {
 			$this->getOutput()->redirect(
 				Title::newFromText( 'Special:FundraiserMaintenance' )->getFullURL(), '302'
@@ -38,7 +35,7 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 		$request = $this->getRequest();
 
 		// Set squid age
-		$out->setCdnMaxage( $wgFundraiserLandingPageMaxAge );
+		$out->setCdnMaxage( $config->get( 'FundraiserLandingPageMaxAge' ) );
 
 		if ( $this->isFundraiseUp() ) {
 			$out->addScript( $this->getFundraiseUpJavascript() );
@@ -70,9 +67,10 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 		// clear output variable to be safe
 		$output = '';
 
+		$fundraiserLPDefaults = $config->get( 'FundraiserLPDefaults' );
 		// begin generating the template call
 		$template = self::fundraiserLandingPageMakeSafe(
-			$request->getText( 'template', $wgFundraiserLPDefaults[ 'template' ] )
+			$request->getText( 'template', $fundraiserLPDefaults[ 'template' ] )
 		);
 		$output .= "{{ $template\n";
 
@@ -85,7 +83,7 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 		];
 		foreach ( $requiredParams as $requiredParam ) {
 			$param = self::fundraiserLandingPageMakeSafe(
-				$request->getText( $requiredParam, $wgFundraiserLPDefaults[$requiredParam] )
+				$request->getText( $requiredParam, $fundraiserLPDefaults[$requiredParam] )
 			);
 			// Add them to the template call
 			$output .= "| $requiredParam = $param\n";
@@ -95,7 +93,7 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 		$country = $request->getVal( 'country' );
 		// If country still isn't set, set it to the default
 		if ( !$country ) {
-			$country = $wgFundraiserLPDefaults[ 'country' ];
+			$country = $fundraiserLPDefaults[ 'country' ];
 		}
 		$country = self::fundraiserLandingPageMakeSafe( $country );
 		$output .= "| country = $country\n";
