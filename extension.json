@@ -10,7 +10,7 @@
 	"version": "1.1.0",
 	"type": "specialpage",
 	"requires": {
-		"MediaWiki": ">= 1.39",
+		"MediaWiki": ">= 1.43",
 		"extensions": {
 			"EventLogging": "*"
 		}

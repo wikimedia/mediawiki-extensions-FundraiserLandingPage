@@ -3,8 +3,8 @@
 namespace MediaWiki\Extension\FundraiserLandingPage;
 
 use MediaWiki\Extension\FundraiserLandingPage\Specials\FundraiserLandingPage;
-use OutputPage;
-use Parser;
+use MediaWiki\Output\OutputPage;
+use MediaWiki\Parser\Parser;
 use Skin;
 
 class Hooks {

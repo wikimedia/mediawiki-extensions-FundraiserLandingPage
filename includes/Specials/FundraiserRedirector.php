@@ -10,8 +10,8 @@
 namespace MediaWiki\Extension\FundraiserLandingPage\Specials;
 
 use MediaWiki\MediaWikiServices;
-use SpecialPage;
-use UnlistedSpecialPage;
+use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\SpecialPage\UnlistedSpecialPage;
 
 class FundraiserRedirector extends UnlistedSpecialPage {
 	public function __construct() {

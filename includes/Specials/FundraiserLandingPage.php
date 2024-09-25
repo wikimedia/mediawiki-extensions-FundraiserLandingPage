@@ -9,9 +9,9 @@ namespace MediaWiki\Extension\FundraiserLandingPage\Specials;
  * @author Peter Gehres <pgehres@wikimedia.org>
  */
 
-use Parser;
-use Title;
-use UnlistedSpecialPage;
+use MediaWiki\Parser\Parser;
+use MediaWiki\SpecialPage\UnlistedSpecialPage;
+use MediaWiki\Title\Title;
 
 class FundraiserLandingPage extends UnlistedSpecialPage {
 	public function __construct() {
