@@ -23,9 +23,7 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 	 */
 	public function execute( $par ) {
 		$config = $this->getConfig();
-		if ( $config->get( 'ContributionTrackingFundraiserMaintenance' )
-			|| $config->get( 'ContributionTrackingFundraiserMaintenanceUnsched' )
-		) {
+		if ( $config->get( 'DonationInterfaceFundraiserMaintenance' ) ) {
 			$this->getOutput()->redirect(
 				Title::newFromText( 'Special:FundraiserMaintenance' )->getFullURL(), '302'
 			);
