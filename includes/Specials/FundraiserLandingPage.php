@@ -48,9 +48,6 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 		// and add a <meta name="description"> tag to give search engines a useful blurb
 		$out->addMeta( 'description', $this->msg( 'fundraiserlandingpage-meta-description' ) );
 
-		// And mark the page as allowed for search engine indexing (default for SpecialPages is noindex)
-		$out->setIndexPolicy( 'index' );
-
 		// Instruct browsers to pre-fetch the DNS for payments-wiki to speed up loading the next form
 		$out->addHeadItem(
 			'payments-dns-prefetch',
@@ -119,6 +116,16 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 
 		// print the output to the page
 		$out->addWikiTextAsInterface( $output );
+	}
+
+	/**
+	 * Mark the page as allowed for search engine indexing
+	 * (default for SpecialPages is noindex)
+	 *
+	 * @return string
+	 */
+	protected function getRobotPolicy() {
+		return 'index,nofollow';
 	}
 
 	/**
