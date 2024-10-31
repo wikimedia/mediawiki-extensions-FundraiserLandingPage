@@ -2,8 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Gomoko",
-			"Verdy p"
+			"Verdy p",
+			"Mahabarata"
 		]
 	},
-	"fundraiserlandingpage-desc": "Prends les paramètres de l’URL et les passe au modèle spécifié comme variables de modèle."
+	"fundraiserlandingpage-desc": "Prends les paramètres de l’URL et les passe au modèle spécifié comme variables de modèle.",
+	"fundraiserlandingpage-meta-description": "Faites un don à la Fondation Wikimédia, l'association à but non lucratif qui héberge Wikipédia et d'autres projets essentiels de connaissances libres. Chaque année, la générosité des 2 % de lecteurs qui font un don nous permet d'étendre la portée de Wikipédia et des projets qui y sont rattachés. Notre objectif est de garantir que les connaissances restent librement accessibles aux générations à venir et pour cela, nous avons besoin de votre soutien."
 }
