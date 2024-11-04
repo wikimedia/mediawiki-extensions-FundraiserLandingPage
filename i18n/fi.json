@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Olli"
+			"Olli",
+			"Samoasambia"
 		]
 	},
 	"fundraiserlandingpage-desc": "Ottaa osoitemuuttujat ja lähettää ne tietylle mallineelle muuttujina"
