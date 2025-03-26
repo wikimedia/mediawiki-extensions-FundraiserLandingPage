@@ -9,7 +9,9 @@ namespace MediaWiki\Extension\FundraiserLandingPage\Specials;
  * @author Peter Gehres <pgehres@wikimedia.org>
  */
 
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Parser\Parser;
+use MediaWiki\Parser\ParserOptions;
 use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\Title\Title;
 
@@ -24,45 +26,45 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 	public function execute( $par ) {
 		$config = $this->getConfig();
 
-		$out = $this->getOutput();
+		$outputPage = $this->getOutput();
 		$request = $this->getRequest();
 
 		// Set squid age
-		$out->setCdnMaxage( $config->get( 'FundraiserLandingPageMaxAge' ) );
+		$outputPage->setCdnMaxage( $config->get( 'FundraiserLandingPageMaxAge' ) );
 
 		if ( $this->isFundraiseUp() ) {
-			$out->addScript( $this->getFundraiseUpJavascript() );
+			$outputPage->addScript( $this->getFundraiseUpJavascript() );
 		}
 		$this->setHeaders();
 
 		// set the page title to something useful
 		$titleMsg = $this->msg( 'donate_interface-make-your-donation' );
-		if ( !is_callable( [ $out, 'setPageTitleMsg' ] ) ) {
+		if ( !is_callable( [ $outputPage, 'setPageTitleMsg' ] ) ) {
 			// Backward compatibility with MW < 1.41
-			$out->setPageTitle( $titleMsg );
+			$outputPage->setPageTitle( $titleMsg );
 		} else {
 			// MW >= 1.41
-			$out->setPageTitleMsg( $titleMsg );
+			$outputPage->setPageTitleMsg( $titleMsg );
 		}
 
 		// and add a <meta name="description"> tag to give search engines a useful blurb
-		$out->addMeta( 'description', $this->msg( 'fundraiserlandingpage-meta-description' ) );
+		$outputPage->addMeta( 'description', $this->msg( 'fundraiserlandingpage-meta-description' ) );
 
 		// Instruct browsers to pre-fetch the DNS for payments-wiki to speed up loading the next form
-		$out->addHeadItem(
+		$outputPage->addHeadItem(
 			'payments-dns-prefetch',
 			'<link rel="dns-prefetch" href="' . $this->getConfig()->get( 'FundraiserLandingPagePaymentsHost' ) . '" />'
 		);
 
 		// clear output variable to be safe
-		$output = '';
+		$outputWikitext = '';
 
 		$fundraiserLPDefaults = $config->get( 'FundraiserLPDefaults' );
 		// begin generating the template call
 		$template = self::fundraiserLandingPageMakeSafe(
 			$request->getText( 'template', $fundraiserLPDefaults[ 'template' ] )
 		);
-		$output .= "{{ $template\n";
+		$outputWikitext .= "{{ $template\n";
 
 		// get the required variables (except template and country) to use for the landing page
 		$requiredParams = [
@@ -76,7 +78,7 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 				$request->getText( $requiredParam, $fundraiserLPDefaults[$requiredParam] )
 			);
 			// Add them to the template call
-			$output .= "| $requiredParam = $param\n";
+			$outputWikitext .= "| $requiredParam = $param\n";
 		}
 
 		// get the country code
@@ -86,7 +88,7 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 			$country = $fundraiserLPDefaults[ 'country' ];
 		}
 		$country = self::fundraiserLandingPageMakeSafe( $country );
-		$output .= "| country = $country\n";
+		$outputWikitext .= "| country = $country\n";
 
 		// @phan-suppress-next-line PhanUselessBinaryAddRight
 		$excludeKeys = $requiredParams + [ 'template', 'country', 'title' ];
@@ -102,20 +104,32 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 				$key = self::fundraiserLandingPageMakeSafe( $k_unsafe );
 				$val = self::fundraiserLandingPageMakeSafe( $v_unsafe );
 				// print to the template in wiki-syntax
-				$output .= "| $key = $val\n";
+				$outputWikitext .= "| $key = $val\n";
 			}
 		}
 
 		// close the template call
-		$output .= "}}";
+		$outputWikitext .= "}}";
 
 		// Hijack parser internals to workaround T156184.  This should be safe
 		// since we've sanitized all params.
-		$parserOptions = $out->parserOptions();
+
+		$parserOptions = ParserOptions::newFromContext( $outputPage->getContext() );
 		$parserOptions->setAllowUnsafeRawHtml( true );
 
+		// FIXME: Generating the parsed output really shouldn't be our responsibility.
+		$parsedContent = MediaWikiServices::getInstance()->getParserFactory()->getInstance()
+			->parse(
+				$outputWikitext,
+				$this->getPageTitle(),
+				$parserOptions,
+				false,
+				true,
+				$outputPage->getRevisionId()
+			);
+
 		// print the output to the page
-		$out->addWikiTextAsInterface( $output );
+		$outputPage->addParserOutput( $parsedContent, $parserOptions, [] );
 	}
 
 	/**
