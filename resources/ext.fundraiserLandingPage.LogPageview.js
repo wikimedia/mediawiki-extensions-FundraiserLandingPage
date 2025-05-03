@@ -2,7 +2,7 @@
  * Send an EventLogging event for all pageviews
  */
 ( function () {
-	var urlParams = new URL( location.href ).searchParams,
+	let urlParams = new URL( location.href ).searchParams,
 		sampleRateParamAsFloat = parseFloat( urlParams.get( 'fundraiserLandingPageELSampleRate' ) ),
 		random = Math.random(),
 		sampleRate, eventData, elBaseUrl, elParams, elUrl,
@@ -43,8 +43,8 @@
 			sample_rate: sampleRate
 		};
 
-		$.each( QUERY_EL_MAP, function ( elPropName, urlParamsToTry ) {
-			var i, urlParamToTry;
+		$.each( QUERY_EL_MAP, ( elPropName, urlParamsToTry ) => {
+			let i, urlParamToTry;
 
 			for ( i = 0; i < urlParamsToTry.length; i++ ) {
 				urlParamToTry = urlParamsToTry[ i ];
