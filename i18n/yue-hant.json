@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ktchankt",
 			"Winston Sung"
 		]
 	},
-	"fundraiserlandingpage-desc": "用 URL 參數同用佢做模變數傳畀指定嘅模"
+	"fundraiserlandingpage-desc": "用 URL 參數同用佢做模變數傳畀指定嘅模",
+	"fundraiserlandingpage-meta-description": "請捐錢畀維基媒體基金會，佢係託管維基百科同其他重要免費知識計劃嘅非牟利機構。每年只有約莫2%嘅讀者會捐錢；佢哋嘅慷慨令我哋可以擴大維基百科同佢兄弟計劃嘅觸及。我哋嘅目標係確保知識喺未來世世代代都可以免費獲取，所以我哋需要你嘅支持。"
 }
