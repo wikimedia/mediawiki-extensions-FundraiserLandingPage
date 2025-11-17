@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Lloffiwr"
+			"Lloffiwr",
+			"Ceirios"
 		]
 	},
-	"fundraiserlandingpage-desc": "Yn cymryd paramedrau URL ac yn eu hanfon at y nodyn a benwyd fel newidynnau'r nodyn"
+	"fundraiserlandingpage-desc": "Yn cymryd paramedrau URL ac yn eu hanfon at y templed a benwyd fel newidynnau'r templed"
 }
