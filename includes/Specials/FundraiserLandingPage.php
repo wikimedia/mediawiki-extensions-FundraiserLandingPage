@@ -17,14 +17,8 @@ use MediaWiki\Title\Title;
 use SkinFactory;
 
 class FundraiserLandingPage extends UnlistedSpecialPage {
-	/**
-	 * @var SkinFactory
-	 */
-	private $skinFactory;
-
-	public function __construct( SkinFactory $skinFactory ) {
+	public function __construct( private readonly SkinFactory $skinFactory ) {
 		parent::__construct( 'FundraiserLandingPage' );
-		$this->skinFactory = $skinFactory;
 	}
 
 	/**
