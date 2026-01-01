@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ainali"
+			"Ainali",
+			"Stefan2255"
 		]
 	},
-	"fundraiserlandingpage-desc": "Tar URL-parametrar och skickar dem till den angivna mallen som mallvariabler"
+	"fundraiserlandingpage-desc": "Tar URL-parametrar och skickar dem till den angivna mallen som mallvariabler",
+	"fundraiserlandingpage-meta-description": "Donera till Wikimedia Foundation, den ideella organisationen som är värd för Wikipedia och andra viktiga projekt för fri kunskap. Varje år gör generositeten hos de 2% av läsarna som donerar det möjligt för oss att utöka räckvidden för Wikipedia och våra andra projekt. Vårt mål är att säkerställa att kunskap förblir fritt tillgänglig för kommande generationer och för det behöver vi ditt stöd."
 }
