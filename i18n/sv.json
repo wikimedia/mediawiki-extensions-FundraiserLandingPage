@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ainali"
+			"Ainali",
+			"Stefan2255"
 		]
 	},
 	"fundraiserlandingpage-desc": "Tar URL-parametrar och skickar dem till den angivna mallen som mallvariabler"
