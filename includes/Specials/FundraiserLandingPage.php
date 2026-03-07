@@ -51,7 +51,7 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 		}
 
 		// and add a <meta name="description"> tag to give search engines a useful blurb
-		$outputPage->addMeta( 'description', $this->msg( 'fundraiserlandingpage-meta-description' ) );
+		$outputPage->addMeta( 'description', $this->msg( 'fundraiserlandingpage-meta-description' )->parse() );
 
 		// Instruct browsers to pre-fetch the DNS for payments-wiki to speed up loading the next form
 		$outputPage->addHeadItem(
