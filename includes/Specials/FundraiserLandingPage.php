@@ -44,6 +44,7 @@ class FundraiserLandingPage extends UnlistedSpecialPage {
 		$titleMsg = $this->msg( 'donate_interface-make-your-donation' );
 		if ( !is_callable( [ $outputPage, 'setPageTitleMsg' ] ) ) {
 			// Backward compatibility with MW < 1.41
+			// @phan-suppress-next-line PhanTypeMismatchArgument
 			$outputPage->setPageTitle( $titleMsg );
 		} else {
 			// MW >= 1.41
