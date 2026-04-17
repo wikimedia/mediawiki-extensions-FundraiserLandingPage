@@ -66,6 +66,7 @@
 			"args": [
 				{
 					"name": "donate",
+					"menus": [],
 					"responsive": true,
 					"toc": false
 				}
