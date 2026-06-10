@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Base"
+			"Base",
+			"Movses"
 		]
 	},
 	"fundraiserlandingpage-desc": "Використовує параметри URL і передає їх у вказаний шаблон як змінні шаблону"
