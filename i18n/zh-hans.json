@@ -2,9 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Huajing",
+			"Ouclie",
 			"Yanmiao liu"
 		]
 	},
 	"fundraiserlandingpage-desc": "采用URL参数并将其作为模板变量传递给指定的模板",
-	"fundraiserlandingpage-meta-description": "向维基媒体基金会捐款，该基金会是托管维基百科和其他重要的免费知识项目的非营利组织。每年，2% 的读者慷慨捐赠使我们能够扩大维基百科及其姊妹项目的影响力。我们的目标是确保下一代可以继续免费获取知识，因此，我们需要您的支持。"
+	"fundraiserlandingpage-meta-description": "请捐助维基媒体基金会，这个非营利组织运营着维基百科和其他重要的自由知识项目。每年，2%的读者慷慨解囊，帮助我们扩大维基百科和其他项目的影响力。我们的目标是确保知识能够世代自由获取，而这需要您的支持。"
 }
