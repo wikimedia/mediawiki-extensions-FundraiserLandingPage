@@ -10,7 +10,7 @@
 	"version": "1.1.0",
 	"type": "specialpage",
 	"requires": {
-		"MediaWiki": ">= 1.43",
+		"MediaWiki": ">= 1.47.0",
 		"extensions": {
 			"EventLogging": "*"
 		}
@@ -21,12 +21,15 @@
 	"ResourceModules": {
 		"skins.donate.styles": {
 			"class": "MediaWiki\\ResourceLoader\\SkinModule",
-			"features": [ "logo" ],
-			"styles": [ "skins.donate.styles.less" ]
+			"features": [
+				"logo"
+			],
+			"styles": [
+				"skins.donate.styles.less"
+			]
 		},
 		"ext.fundraiserLandingPage.LogPageview": {
 			"dependencies": [
-				"web2017-polyfills",
 				"ext.eventLogging"
 			],
 			"scripts": "ext.fundraiserLandingPage.LogPageview.js"
